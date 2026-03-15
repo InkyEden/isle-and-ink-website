@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npx)",
+      "Bash(where node)",
+      "Bash(npx serve --version)",
+      "Bash(where serve)",
+      "Bash(node -e \"console.log\\(require.resolve\\(''serve/bin/serve.js''\\)\\)\")",
+      "Bash(npm root -g)",
+      "Bash(node -e \"var fs=require\\(''fs''\\); var p=''C:\\\\\\\\Users\\\\\\\\robda\\\\\\\\AppData\\\\\\\\Roaming\\\\\\\\npm\\\\\\\\node_modules''; console.log\\(fs.existsSync\\(p\\), fs.readdirSync\\(p\\).join\\('', ''\\)\\)\")",
+      "Bash(node -e \"var path=require\\(''path''\\),fs=require\\(''fs''\\); var d=''C:/Users/robda/AppData/Roaming/npm/node_modules''; console.log\\(fs.readdirSync\\(d\\).join\\('', ''\\)\\)\")",
+      "Bash(node -e \"var http=require\\(''http''\\),fs=require\\(''fs''\\),path=require\\(''path''\\); console.log\\(''node ok''\\)\")"
+    ]
+  }
+}
