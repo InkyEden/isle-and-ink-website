@@ -1503,7 +1503,7 @@ footer {
             data-item-id="calgary"
             data-item-name="Calgary"
             data-item-price="120"
-            data-item-url="https://beldeth.github.io/isle-and-ink/"
+            data-item-url="https://inkyeden.github.io/isle-and-ink-website/"
             data-item-description="Linocut Reduction · Limited Edition of 15 · A3"
             data-item-image="https://lh3.googleusercontent.com/d/1OQvcJ3IJIG_FM-9m8hGBQov3Zeg_2Dz9"
             data-item-max-quantity="15"
@@ -2249,7 +2249,7 @@ let adminDraftProducts = {};
 
 // ─── Render shop grids dynamically ───────────────────────────────────────────
 function renderShop() {
-  const ITEM_URL = 'https://beldeth.github.io/isle-and-ink/';
+  const ITEM_URL = 'https://inkyeden.github.io/isle-and-ink-website/';
   const delays = ['', ' d1', ' d2', ' d3'];
 
   function makePrintCard(id, p, i) {
@@ -2733,7 +2733,7 @@ function loadProduct(id) {
     addBtn.dataset.itemId = id;
     addBtn.dataset.itemName = p.name;
     addBtn.dataset.itemPrice = p.price;
-    addBtn.dataset.itemUrl = 'https://beldeth.github.io/isle-and-ink/';
+    addBtn.dataset.itemUrl = 'https://inkyeden.github.io/isle-and-ink-website/';
     addBtn.dataset.itemImage = p.images[0];
     addBtn.dataset.itemDescription = p.desc.substring(0, 200);
     addBtn.dataset.itemQuantity = '1';
