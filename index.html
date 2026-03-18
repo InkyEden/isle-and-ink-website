@@ -225,11 +225,6 @@ nav {
   box-shadow: 0 20px 60px rgba(26,39,68,0.18);
   width: 210px;
   z-index: 2;
-  animation: floatCard 4s ease-in-out infinite;
-}
-@keyframes floatCard {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
 }
 .float-label {
   font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em;
@@ -1101,6 +1096,98 @@ footer {
   .hero-float-card { width: 140px; font-size: 0.78rem; }
 }
 
+/* ═══════════════════════════════════════════
+   ██ PAGE: CONTACT
+═══════════════════════════════════════════ */
+.contact-wrap {
+  max-width: 640px; margin: 0 auto;
+  padding: 5rem 2rem 6rem;
+}
+.contact-h1 {
+  font-family: 'Geist', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; line-height: 1.1;
+  color: var(--ink); margin-bottom: 0.75rem;
+}
+.contact-h1 em { font-style: italic; color: var(--teal); }
+.contact-sub {
+  font-size: 1rem; line-height: 1.8; color: var(--ink);
+  opacity: 0.62; margin-bottom: 3rem;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-label {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink); opacity: 0.55;
+  display: flex; flex-direction: column; gap: 0.45rem;
+}
+.contact-input, .contact-textarea {
+  width: 100%; padding: 0.8rem 1rem;
+  border: 1.5px solid rgba(26,39,68,0.15); border-radius: 0.6rem;
+  font-family: 'Geist', sans-serif; font-size: 0.95rem;
+  color: var(--ink); background: var(--warm-white);
+  outline: none; transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.contact-input:focus, .contact-textarea:focus { border-color: var(--teal); }
+.contact-textarea { min-height: 160px; resize: vertical; }
+.contact-success {
+  display: none; background: #e8f5f0; border: 1px solid #a8d8c8;
+  border-radius: 0.75rem; padding: 1.5rem;
+  color: var(--ink); font-size: 0.95rem; line-height: 1.7; text-align: center;
+}
+@media (max-width: 480px) {
+  .contact-wrap { padding: 3rem 1.25rem 4rem; }
+}
+
+/* ═══════════════════════════════════════════
+   ██ PAGE: INFO (Shipping / Returns / FAQ)
+═══════════════════════════════════════════ */
+.info-hero {
+  background: var(--ink); padding: 5rem 4rem 4rem; text-align: center; color: var(--cream);
+}
+.info-h1 {
+  font-family: 'Geist', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 800; color: var(--cream);
+  margin-bottom: 0.75rem;
+}
+.info-h1 em { font-style: italic; color: var(--teal-light); }
+.info-intro {
+  font-size: 1rem; line-height: 1.8; color: var(--cream);
+  opacity: 0.6; max-width: 500px; margin: 0 auto;
+}
+.info-body { max-width: 740px; margin: 0 auto; padding: 5rem 2rem 6rem; }
+.info-section { margin-bottom: 4rem; }
+.info-section-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.5rem; font-weight: 700; color: var(--ink);
+  margin-bottom: 1.5rem; padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--teal);
+}
+.info-p {
+  font-size: 0.97rem; line-height: 1.9; color: var(--ink);
+  opacity: 0.72; margin-bottom: 1rem;
+}
+.info-list {
+  list-style: none; margin: 0.5rem 0 1rem; padding: 0;
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.info-list li {
+  font-size: 0.97rem; line-height: 1.7; color: var(--ink); opacity: 0.72;
+  padding-left: 1.4rem; position: relative;
+}
+.info-list li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+.faq-item { margin-bottom: 1.5rem; }
+.faq-q {
+  font-family: 'Geist', sans-serif; font-size: 1rem;
+  font-weight: 600; color: var(--ink); margin-bottom: 0.4rem;
+}
+.faq-a {
+  font-size: 0.95rem; line-height: 1.8; color: var(--ink); opacity: 0.65;
+}
+@media (max-width: 768px) {
+  .info-hero { padding: 4rem 1.5rem 3rem; }
+  .info-body { padding: 3rem 1.25rem 4rem; }
+}
+
 </style>
 </head>
 <body>
@@ -1115,9 +1202,7 @@ footer {
     <li><a href="#" onclick="showPage('about')" id="nav-about">About</a></li>
     <li><a href="#" onclick="showPage('process')" id="nav-process">Process</a></li>
   </ul>
-  <a class="nav-logo" href="#" onclick="showPage('home')" style="display:flex;align-items:center;gap:0.5rem;">
-    <img src="https://lh3.googleusercontent.com/d/1hkCqOGYH9Ga9VGijT0NIDLqm2ryPJvJq" style="height:36px;width:auto;" alt="Isle and Ink logo">
-  </a>
+  <a class="nav-logo" href="#" onclick="showPage('home')">ISLE AND INK</a>
   <div class="nav-right">
     <a class="nav-ig" href="https://www.instagram.com/isle_and_ink" target="_blank" rel="noopener">Instagram</a>
     <button class="snipcart-checkout nav-cart">Basket (<span class="snipcart-items-count">0</span>)</button>
@@ -1153,7 +1238,7 @@ footer {
         <div class="hero-float-card">
           <p class="float-label">Limited Edition</p>
           <p class="float-title">Ardalanish · A3</p>
-          <p class="float-price">£120 · Linocut Reduction</p>
+          <p class="float-price">£150 · Linocut Reduction</p>
         </div>
       </div>
     </div>
@@ -1176,7 +1261,9 @@ footer {
         <span class="pill">Calgary Gallery</span>
         <span class="pill">Island Crafts</span>
         <span class="pill">Iona Craft Shop</span>
-        <span class="pill">Mull & Iona Shop</span>
+        <span class="pill">Red Door Gallery</span>
+        <span class="pill">The Gift Horse</span>
+        <span class="pill">Loch And Loaf</span>
       </div>
     </div>
   </section>
@@ -1191,39 +1278,39 @@ footer {
       <a href="#" class="view-all" onclick="showPage('shop')">View all prints</a>
     </div>
     <div class="prints-grid">
-      <div class="print-card tall reveal" onclick="showPage('shop')">
+      <div class="print-card tall reveal" onclick="showPage('product','burrow')">
         <img src="images/burrow1.jpg" class="print-thumb" style="min-height:540px; width:100%; display:block; object-fit:cover;" alt="Burrow linocut print">
         <div class="print-overlay">
           <p class="print-name">Burrow</p>
-          <div class="print-meta"><span class="print-ed">Open Ed. · A3</span><span class="print-price">£48</span></div>
+          <div class="print-meta"><span class="print-ed">Open Ed.</span><span class="print-price">£68</span></div>
         </div>
       </div>
-      <div class="print-card reveal d1" onclick="showPage('shop')">
+      <div class="print-card reveal d1" onclick="showPage('product','calgary')">
         <img src="images/closeup2.jpg" class="print-thumb" style="aspect-ratio:4/3;width:100%;display:block;object-fit:cover;" alt="Calgary Bay close up detail">
         <div class="print-overlay">
-          <p class="print-name">Calgary: Detail</p>
+          <p class="print-name">Calgary Bay</p>
           <div class="print-meta"><span class="print-ed">Limited · Ed. of 15</span><span class="print-price">£120</span></div>
         </div>
       </div>
-      <div class="print-card reveal d2" onclick="showPage('shop')">
+      <div class="print-card reveal d2" onclick="showPage('product','hebridean-dreams')">
         <img src="images/otter-closeup.jpg" class="print-thumb" style="aspect-ratio:4/3;width:100%;display:block;object-fit:cover;" alt="Otter close up linocut print">
         <div class="print-overlay">
-          <p class="print-name">Otter: Close Up</p>
-          <div class="print-meta"><span class="print-ed">Open Ed.</span><span class="print-price">£20</span></div>
+          <p class="print-name">Hebridean Dreams</p>
+          <div class="print-meta"><span class="print-ed">Open Ed.</span><span class="print-price">£68</span></div>
         </div>
       </div>
-      <div class="print-card reveal d3" onclick="showPage('shop')">
+      <div class="print-card reveal d3" onclick="showPage('product','spring-on-iona')">
         <img src="images/spring-on-iona4.png" class="print-thumb" style="aspect-ratio:4/3;width:100%;display:block;object-fit:cover;" alt="Spring on Iona linocut print">
         <div class="print-overlay">
           <p class="print-name">Spring on Iona</p>
-          <div class="print-meta"><span class="print-ed">Open Ed.</span><span class="print-price">£20</span></div>
+          <div class="print-meta"><span class="print-ed">Limited Ed. of 18</span><span class="print-price">£75</span></div>
         </div>
       </div>
-      <div class="print-card reveal d4" onclick="showPage('shop')">
+      <div class="print-card reveal d4" onclick="showPage('product','tangled')">
         <img src="images/seaweed-otter.png" class="print-thumb" style="aspect-ratio:4/3;width:100%;display:block;object-fit:cover;" alt="Seaweed Otter linocut print">
         <div class="print-overlay">
-          <p class="print-name">Seaweed Otter</p>
-          <div class="print-meta"><span class="print-ed">Open Ed.</span><span class="print-price">£20</span></div>
+          <p class="print-name">Tangled</p>
+          <div class="print-meta"><span class="print-ed">Open Ed.</span><span class="print-price">£32</span></div>
         </div>
       </div>
     </div>
@@ -1267,26 +1354,26 @@ footer {
     <div class="cards-content reveal">
       <p class="section-label">Greeting Cards</p>
       <h2 class="cards-h2">A little piece<br>of <em>Mull to send</em></h2>
-      <p class="cards-body">Printed from original linocut artwork, blank inside, A6 format. Perfect for sending a piece of the Hebrides, or keeping for yourself.</p>
-      <p class="cards-price">From £3 · Bundles from £12</p>
+      <p class="cards-body">Designed and inspired by the wild landscapes and wildlife of the Hebrides. A6 format, blank inside, perfect for sending a little piece of these islands to someone you love.</p>
+      <p class="cards-price">From £3.50 · Bundles from £12</p>
       <a href="#" class="btn-light" onclick="showPage('shop')">Shop Cards & Bundles</a>
     </div>
     <div class="cards-mosaic reveal d1">
-      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;">
+      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;" onclick="showPage('product','card-celebration-puffin')">
         <img src="https://lh3.googleusercontent.com/d/1z89bnOJXJ2V1ocsGfzz0yoIBqa6uXGyQ" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Celebration Puffin card">
-        <div class="card-tile-info"><p class="card-tile-name">Celebration Puffin</p><p class="card-tile-price">£3.00</p></div>
+        <div class="card-tile-info"><p class="card-tile-name">Celebration Puffin</p><p class="card-tile-price">£3.50</p></div>
       </div>
-      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;">
+      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;" onclick="showPage('product','card-sunset-puffins')">
         <img src="https://lh3.googleusercontent.com/d/1YCCJcOjxvlDVJJQ_frjcMPfExsjQD53j" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Sunset Puffins card">
-        <div class="card-tile-info"><p class="card-tile-name">Sunset Puffins</p><p class="card-tile-price">£3.00</p></div>
+        <div class="card-tile-info"><p class="card-tile-name">Sunset Puffins</p><p class="card-tile-price">£3.50</p></div>
       </div>
-      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;">
+      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;" onclick="showPage('product','card-ardalanish')">
         <img src="https://lh3.googleusercontent.com/d/1QjBj73OR0259Ur5zyVHAIOh-HLqB4dZu" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Ardalanish card">
-        <div class="card-tile-info"><p class="card-tile-name">Ardalanish</p><p class="card-tile-price">£3.00</p></div>
+        <div class="card-tile-info"><p class="card-tile-name">Ardalanish</p><p class="card-tile-price">£3.50</p></div>
       </div>
-      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;">
+      <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;" onclick="showPage('product','card-treshnish-puffins')">
         <img src="https://lh3.googleusercontent.com/d/1cKVgUecvDTsEqPckxBo7uJViRpzHz9hB" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Puffins card">
-        <div class="card-tile-info"><p class="card-tile-name">Treshnish Puffins</p><p class="card-tile-price">£3.00</p></div>
+        <div class="card-tile-info"><p class="card-tile-name">Treshnish Puffins</p><p class="card-tile-price">£3.50</p></div>
       </div>
     </div>
   </section>
@@ -1297,10 +1384,11 @@ footer {
       <p class="section-label center">Stay connected</p>
       <h2 class="email-h2">Be first to see<br><em>new work from Mull</em></h2>
       <p class="email-sub">New prints sell quickly, especially limited editions. Sign up and you'll hear about new work before anyone else, with occasional stories from the island.</p>
-      <form class="email-form" onsubmit="return false;">
-        <input class="email-input" type="email" placeholder="your@email.com">
-        <button class="email-btn">Join</button>
+      <form class="email-form" onsubmit="mailchimpSignup(this); return false;">
+        <input class="email-input" type="email" name="EMAIL" placeholder="your@email.com" required>
+        <button class="email-btn" type="submit">Join</button>
       </form>
+      <p class="mc-msg" style="display:none;font-size:0.85rem;margin-top:0.5rem;color:var(--teal);"></p>
       <div class="email-perks">
         <span class="perk">First access to new prints</span>
         <span class="perk">No spam, ever</span>
@@ -1313,8 +1401,8 @@ footer {
     <div class="footer-grid">
       <div><p class="footer-brand">Isle & Ink</p><p class="footer-tagline">Handmade lino & wood prints from Pennyghael, Isle of Mull. Wild landscapes, Hebridean wildlife, crafted with care.</p><div class="footer-socials"><a href="#" class="social-ico">ig</a><a href="#" class="social-ico">fb</a></div></div>
       <div class="footer-col"><h4>Shop</h4><ul><li><a href="#" onclick="showPage('shop')">Original Prints</a></li><li><a href="#" onclick="showPage('shop')">Greeting Cards</a></li><li><a href="#" onclick="showPage('shop')">Christmas Cards</a></li><li><a href="#" onclick="showPage('shop')">Bundles</a></li></ul></div>
-      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li><li><a href="#" onclick="showPage('about')">Stockists</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Info</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Care Guide</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li><li><a href="#" onclick="showPage('about')">Stockists</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="#" onclick="showPage('info')">Shipping</a></li><li><a href="#" onclick="showPage('info')">Returns</a></li><li><a href="#" onclick="showPage('info')">Care Guide</a></li><li><a href="#" onclick="showPage('info')">FAQ</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-copy">© 2025 Isle and Ink · Eden Reeve</p><p class="footer-loc">📍 Pennyghael, Isle of Mull, Scotland</p><a href="#" class="admin-footer-link" onclick="showPage('admin-login')">Admin</a></div>
   </footer>
@@ -1332,31 +1420,48 @@ footer {
 
   <div class="shop-filters">
     <span class="filter-label">Filter</span>
-    <button class="filter-btn active">All</button>
-    <button class="filter-btn">Original Prints</button>
-    <button class="filter-btn">Greeting Cards</button>
-    <button class="filter-btn">Christmas Cards</button>
-    <button class="filter-btn">Bundles</button>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="print">Original Prints</button>
+    <button class="filter-btn" data-filter="card">Greeting Cards</button>
+    <button class="filter-btn" data-filter="christmas-card">Christmas Cards</button>
+    <button class="filter-btn" data-filter="bundle">Bundles</button>
+    <span id="shop-custom-filter-btns"></span>
   </div>
 
-  <div class="shop-section">
+  <div class="shop-section" id="shop-prints-section">
     <h2 class="shop-section-title">Original <em>Prints</em></h2>
     <div class="shop-grid" id="shop-prints-grid"></div>
   </div>
 
-  <hr class="shop-divider">
+  <hr class="shop-divider" id="shop-divider-1">
 
-  <div class="shop-section">
+  <div class="shop-section" id="shop-cards-section">
     <h2 class="shop-section-title">Greeting <em>Cards</em></h2>
     <div class="cards-grid-shop" id="shop-cards-grid"></div>
   </div>
 
+  <hr class="shop-divider" id="shop-divider-2" style="display:none;">
+
+  <div class="shop-section" id="shop-xmas-section" style="display:none;">
+    <h2 class="shop-section-title">Christmas <em>Cards</em></h2>
+    <div class="cards-grid-shop" id="shop-xmas-grid"></div>
+  </div>
+
+  <hr class="shop-divider" id="shop-divider-3" style="display:none;">
+
+  <div class="shop-section" id="shop-bundles-section" style="display:none;">
+    <h2 class="shop-section-title"><em>Bundles</em></h2>
+    <div class="shop-grid" id="shop-bundles-grid"></div>
+  </div>
+
+  <div id="shop-custom-sections"></div>
+
   <footer>
     <div class="footer-grid">
-      <div><p class="footer-brand">Isle & Ink</p><p class="footer-tagline">Handmade lino & wood prints from Pennyghael, Isle of Mull.</p><div class="footer-socials"><a href="#" class="social-ico">ig</a><a href="#" class="social-ico">fb</a></div></div>
+      <div><p class="footer-brand">Isle & Ink</p><p class="footer-tagline">Handmade lino & wood prints from Pennyghael, Isle of Mull. Wild landscapes, Hebridean wildlife, crafted with care.</p><div class="footer-socials"><a href="#" class="social-ico">ig</a><a href="#" class="social-ico">fb</a></div></div>
       <div class="footer-col"><h4>Shop</h4><ul><li><a href="#">Original Prints</a></li><li><a href="#">Greeting Cards</a></li><li><a href="#">Bundles</a></li></ul></div>
       <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li></ul></div>
-      <div class="footer-col"><h4>Info</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="#" onclick="showPage('info')">Shipping</a></li><li><a href="#" onclick="showPage('info')">Returns</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-copy">© 2025 Isle and Ink · Eden Reeve</p><p class="footer-loc">📍 Pennyghael, Isle of Mull</p></div>
   </footer>
@@ -1405,10 +1510,9 @@ footer {
             data-item-quantity="1">Add to Basket</button>
         </div>
         <div class="product-framing">
-          🖼 <span><strong>Want this framed?</strong> I can arrange framing, <a href="#">get in touch</a> and I'll help.</span>
+          🖼 <span><strong>Want this framed?</strong> I can arrange framing, <a href="#" onclick="showPage('contact')">get in touch</a> and I'll help.</span>
         </div>
-        <p class="shipping-note">📦 Rolled in acid-free tissue and posted in a sturdy cardboard tube. Free UK shipping. Tracked delivery.</p>
-        <p style="margin-top:1rem; font-size:0.8rem; color:var(--ink); opacity:0.45; line-height:1.6;">Each print is carefully hand-pulled, so slight differences from the reference image will occur. These subtle variations are what make every piece a true original.</p>
+        <p id="product-handpulled-note" style="margin-top:1rem; font-size:0.8rem; color:var(--ink); opacity:0.45; line-height:1.6;">Each print is carefully hand-pulled, so slight differences from the reference image will occur. These subtle variations are what make every piece a true original.</p>
       </div>
     </div>
   </div>
@@ -1424,10 +1528,10 @@ footer {
 
   <footer>
     <div class="footer-grid">
-      <div><p class="footer-brand">Isle & Ink</p><p class="footer-tagline">Handmade lino & wood prints from Pennyghael, Isle of Mull.</p><div class="footer-socials"><a href="#" class="social-ico">ig</a><a href="#" class="social-ico">fb</a></div></div>
+      <div><p class="footer-brand">Isle & Ink</p><p class="footer-tagline">Handmade lino & wood prints from Pennyghael, Isle of Mull. Wild landscapes, Hebridean wildlife, crafted with care.</p><div class="footer-socials"><a href="#" class="social-ico">ig</a><a href="#" class="social-ico">fb</a></div></div>
       <div class="footer-col"><h4>Shop</h4><ul><li><a href="#" onclick="showPage('shop')">All Prints</a></li><li><a href="#" onclick="showPage('shop')">Greeting Cards</a></li></ul></div>
       <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li></ul></div>
-      <div class="footer-col"><h4>Info</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="#" onclick="showPage('info')">Shipping</a></li><li><a href="#" onclick="showPage('info')">Returns</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-copy">© 2025 Isle and Ink · Eden Reeve</p><p class="footer-loc">📍 Pennyghael, Isle of Mull</p></div>
   </footer>
@@ -1440,7 +1544,7 @@ footer {
   <section class="about-hero">
     <div class="about-hero-img" style="background:#1a2744; padding:0; overflow:hidden; position:relative;">
       <img src="images/eden3.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="Eden Reeve on Mull">
-      <span class="eden-img-cap" style="position:relative;z-index:2;">Eden on Calgary Bay</span>
+      <span class="eden-img-cap" style="position:relative;z-index:2;">Eden on Loch Beg</span>
     </div>
     <div class="about-hero-content reveal">
       <p class="section-label">The Artist</p>
@@ -1454,17 +1558,14 @@ footer {
 
   <section class="about-values">
     <div class="value-card reveal">
-      <span class="value-icon">🖨</span>
       <h3 class="value-title">Handmade, always</h3>
       <p class="value-body">In a world of mass production, I believe in the beauty of the handmade. Every print is carved, inked, and pulled by hand; no two are ever identical.</p>
     </div>
     <div class="value-card reveal d1">
-      <span class="value-icon">🦦</span>
       <h3 class="value-title">Rooted in place</h3>
       <p class="value-body">The Isle of Mull is not just where I work; it's what I work from. Every design begins with a real encounter on this island: an animal, a bay, a particular quality of light.</p>
     </div>
     <div class="value-card reveal d2">
-      <span class="value-icon">🌿</span>
       <h3 class="value-title">Made to last</h3>
       <p class="value-body">I use archival-quality inks and papers so that your print will look beautiful for decades. These are objects made to be handed down, not disposed of.</p>
     </div>
@@ -1475,7 +1576,7 @@ footer {
     <div class="mull-content reveal d1">
       <p class="section-label">The Island</p>
       <h2 class="mull-h2">Life at the edge<br>of the <em>Hebrides</em></h2>
-      <p class="about-body">The Isle of Mull sits off the west coast of Scotland, in the Inner Hebrides. It's a place of extraordinary wildness: white-tailed eagles, playful otters, ancient standing stones, and coastline that changes colour with every tide.</p>
+      <p class="about-body">The Isle of Mull sits off the west coast of Scotland, in the Inner Hebrides. It's a place of extraordinary wildness: white-tailed eagles, red deer on the ridgeline, playful otters, and coastline that changes colour with every tide.</p>
       <p class="about-body">I moved here after university and have never looked back. The light here is unlike anywhere else. It shifts constantly, from gold to slate to silver, and it makes you want to draw everything you see.</p>
     </div>
   </section>
@@ -1491,7 +1592,9 @@ footer {
       <div class="stockist-card reveal"><p class="stockist-name">Calgary Gallery</p><p class="stockist-loc">Isle of Mull</p></div>
       <div class="stockist-card reveal d1"><p class="stockist-name">Island Crafts</p><p class="stockist-loc">Tobermory, Mull</p></div>
       <div class="stockist-card reveal d2"><p class="stockist-name">Iona Craft Shop</p><p class="stockist-loc">Isle of Iona</p></div>
-      <div class="stockist-card reveal d3"><p class="stockist-name">Mull & Iona Shop</p><p class="stockist-loc">Online & Mull</p></div>
+      <div class="stockist-card reveal d3"><p class="stockist-name">Red Door Gallery</p><p class="stockist-loc">Isle of Mull</p></div>
+      <div class="stockist-card reveal d4"><p class="stockist-name">The Gift Horse</p><p class="stockist-loc">Isle of Mull</p></div>
+      <div class="stockist-card reveal d4"><p class="stockist-name">Loch And Loaf</p><p class="stockist-loc">Isle of Mull</p></div>
     </div>
   </section>
 
@@ -1500,7 +1603,7 @@ footer {
       <p class="section-label center">Stay connected</p>
       <h2 class="email-h2">Stories &<br><em>new work from Mull</em></h2>
       <p class="email-sub">Sign up for occasional news about new prints, behind-the-scenes stories from the studio, and early access to limited editions.</p>
-      <form class="email-form" onsubmit="return false;"><input class="email-input" type="email" placeholder="your@email.com"><button class="email-btn">Join</button></form>
+      <form class="email-form" onsubmit="mailchimpSignup(this); return false;"><input class="email-input" type="email" name="EMAIL" placeholder="your@email.com" required><button class="email-btn" type="submit">Join</button></form><p class="mc-msg" style="display:none;font-size:0.85rem;margin-top:0.5rem;color:var(--teal);"></p>
       <div class="email-perks"><span class="perk">First access to new prints</span><span class="perk">No spam</span><span class="perk">Island stories</span></div>
     </div>
   </section>
@@ -1509,8 +1612,8 @@ footer {
     <div class="footer-grid">
       <div><p class="footer-brand">Isle & Ink</p><p class="footer-tagline">Handmade lino & wood prints from Pennyghael, Isle of Mull. Wild landscapes, Hebridean wildlife, crafted with care.</p><div class="footer-socials"><a href="#" class="social-ico">ig</a><a href="#" class="social-ico">fb</a></div></div>
       <div class="footer-col"><h4>Shop</h4><ul><li><a href="#" onclick="showPage('shop')">Original Prints</a></li><li><a href="#" onclick="showPage('shop')">Greeting Cards</a></li><li><a href="#" onclick="showPage('shop')">Bundles</a></li></ul></div>
-      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Info</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="#" onclick="showPage('info')">Shipping</a></li><li><a href="#" onclick="showPage('info')">Returns</a></li><li><a href="#" onclick="showPage('info')">FAQ</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-copy">© 2025 Isle and Ink · Eden Reeve</p><p class="footer-loc">📍 Pennyghael, Isle of Mull, Scotland</p></div>
   </footer>
@@ -1580,11 +1683,11 @@ footer {
     <p class="section-label">The Tools</p>
     <h2 class="section-h2">What goes into<br><em>every print</em></h2>
     <div class="tools-grid">
-      <div class="tool-card reveal"><p class="tool-icon">🔪</p><p class="tool-name">Lino Gouges</p><p class="tool-note">Hand carving tools</p></div>
-      <div class="tool-card reveal d1"><p class="tool-icon">🖨</p><p class="tool-name">Etching Press</p><p class="tool-note">Pulls each print</p></div>
-      <div class="tool-card reveal d2"><p class="tool-icon">🖌</p><p class="tool-name">Caligo Inks</p><p class="tool-note">Cranfield oil-based</p></div>
-      <div class="tool-card reveal d3"><p class="tool-icon">📄</p><p class="tool-name">Hosho Paper</p><p class="tool-note">Japanese washi</p></div>
-      <div class="tool-card reveal d4"><p class="tool-icon">🎨</p><p class="tool-name">Lino & Wood</p><p class="tool-note">The printing blocks</p></div>
+      <div class="tool-card reveal"><p class="tool-name">Gouges</p><p class="tool-note">Specialised hand carving tools</p></div>
+      <div class="tool-card reveal d1"><p class="tool-name">Etching Press</p><p class="tool-note">Pulls each print</p></div>
+      <div class="tool-card reveal d2"><p class="tool-name">Printmaking Inks</p><p class="tool-note">Caligo Cranfield Oil-Based &amp; Hawthorn Ink</p></div>
+      <div class="tool-card reveal d3"><p class="tool-name">Specialised Paper</p><p class="tool-note">100% Acid Free</p></div>
+      <div class="tool-card reveal d4"><p class="tool-name">Lino & Wood</p><p class="tool-note">The printing blocks</p></div>
     </div>
   </section>
 
@@ -1593,7 +1696,7 @@ footer {
       <p class="section-label center">Stay connected</p>
       <h2 class="email-h2">Watch new work<br><em>take shape</em></h2>
       <p class="email-sub">Sign up to be first to see new prints as they come off the press, with occasional behind-the-scenes stories from the studio and island.</p>
-      <form class="email-form" onsubmit="return false;"><input class="email-input" type="email" placeholder="your@email.com"><button class="email-btn">Join</button></form>
+      <form class="email-form" onsubmit="mailchimpSignup(this); return false;"><input class="email-input" type="email" name="EMAIL" placeholder="your@email.com" required><button class="email-btn" type="submit">Join</button></form><p class="mc-msg" style="display:none;font-size:0.85rem;margin-top:0.5rem;color:var(--teal);"></p>
       <div class="email-perks"><span class="perk">First access to new prints</span><span class="perk">No spam</span><span class="perk">Studio stories</span></div>
     </div>
   </section>
@@ -1602,10 +1705,149 @@ footer {
     <div class="footer-grid">
       <div><p class="footer-brand">Isle & Ink</p><p class="footer-tagline">Handmade lino & wood prints from Pennyghael, Isle of Mull. Wild landscapes, Hebridean wildlife, crafted with care.</p><div class="footer-socials"><a href="#" class="social-ico">ig</a><a href="#" class="social-ico">fb</a></div></div>
       <div class="footer-col"><h4>Shop</h4><ul><li><a href="#" onclick="showPage('shop')">Original Prints</a></li><li><a href="#" onclick="showPage('shop')">Greeting Cards</a></li></ul></div>
-      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Info</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="#" onclick="showPage('info')">Shipping</a></li><li><a href="#" onclick="showPage('info')">Returns</a></li><li><a href="#" onclick="showPage('info')">FAQ</a></li></ul></div>
     </div>
     <div class="footer-bottom"><p class="footer-copy">© 2025 Isle and Ink · Eden Reeve</p><p class="footer-loc">📍 Pennyghael, Isle of Mull, Scotland</p></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="contact-wrap reveal">
+    <p class="section-label">Get in touch</p>
+    <h1 class="contact-h1">Say <em>hello</em></h1>
+    <p class="contact-sub">Whether you have a question about a print, want to arrange framing, or just want to say hi from wherever you are in the world, I'd love to hear from you. I aim to reply within a couple of days.</p>
+
+    <div id="contact-success" class="contact-success">
+      <p style="font-size:1.5rem;margin-bottom:0.5rem;">✉️</p>
+      <p><strong>Message sent. Thank you!</strong></p>
+      <p>I'll be in touch soon.</p>
+    </div>
+
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/mlgpolwa" method="POST">
+      <label class="contact-label">
+        Name
+        <input class="contact-input" type="text" name="name" placeholder="Your name" required>
+      </label>
+      <label class="contact-label">
+        Subject
+        <input class="contact-input" type="text" name="subject" placeholder="What's it about?" required>
+      </label>
+      <label class="contact-label">
+        Message
+        <textarea class="contact-textarea" name="message" placeholder="Your message…" required></textarea>
+      </label>
+      <input type="hidden" name="_replyto" value="eden@isleandink.com">
+      <div>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div><p class="footer-brand">Isle &amp; Ink</p><p class="footer-tagline">Handmade lino &amp; wood prints from Pennyghael, Isle of Mull. Wild landscapes, Hebridean wildlife, crafted with care.</p><div class="footer-socials"><a href="https://www.instagram.com/isle_and_ink" target="_blank" rel="noopener" class="social-ico">ig</a></div></div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="#" onclick="showPage('shop')">Original Prints</a></li><li><a href="#" onclick="showPage('shop')">Greeting Cards</a></li><li><a href="#" onclick="showPage('shop')">Bundles</a></li></ul></div>
+      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li></ul></div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="#" onclick="showPage('info')">Shipping &amp; Returns</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">© 2025 Isle and Ink · Eden Reeve</p><p class="footer-loc">📍 Pennyghael, Isle of Mull</p></div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════
+     PAGE: INFO (Shipping / Returns / FAQ)
+══════════════════════════════ -->
+<div class="page" id="page-info">
+  <div class="info-hero">
+    <p class="section-label shop-hero-label">Good to know</p>
+    <h1 class="info-h1">Shipping, Returns<br><em>&amp; FAQ</em></h1>
+    <p class="info-intro">Everything you need to know about ordering, delivery, and looking after your print.</p>
+  </div>
+
+  <div class="info-body">
+
+    <div class="info-section reveal">
+      <h2 class="info-section-title">Shipping</h2>
+      <p class="info-p">Packaging is chosen to suit the size of your order so everything arrives in perfect condition.</p>
+      <ul class="info-list">
+        <li>Prints <strong>larger than A3</strong> are carefully rolled in acid-free tissue paper and posted in a sturdy, reinforced cardboard tube.</li>
+        <li>Prints <strong>A3 and smaller</strong> are sent flat in a rigid envelope to prevent bending.</li>
+        <li>Greeting cards are sent in a small letterbox-friendly box.</li>
+        <li><strong>UK shipping is free</strong> on all orders, sent tracked via Royal Mail.</li>
+        <li><strong>International shipping</strong> is available, with costs calculated at checkout.</li>
+        <li>Orders are typically dispatched within <strong>2–4 working days</strong>.</li>
+      </ul>
+      <p class="info-p">You'll receive a tracking number by email once your order is on its way.</p>
+    </div>
+
+    <div class="info-section reveal">
+      <h2 class="info-section-title">Returns</h2>
+      <p class="info-p">I want you to love what you receive. Here's what you need to know.</p>
+      <ul class="info-list">
+        <li>If your order arrives <strong>damaged or not as described</strong>, please photograph it and <a href="#" onclick="showPage('contact')" style="color:var(--teal);text-decoration:none;">contact me</a> within 7 days and I'll put it right.</li>
+        <li>Slight variations in colour and texture are a natural part of the printmaking process and are not considered faults; they're what makes each piece unique.</li>
+      </ul>
+    </div>
+
+    <div class="info-section reveal">
+      <h2 class="info-section-title">Caring for your print</h2>
+      <p class="info-p">With a little care, your Isle and Ink print will last for decades.</p>
+      <ul class="info-list">
+        <li><strong>Frame behind UV-protective glass</strong> to prevent fading.</li>
+        <li>Keep out of direct sunlight and away from damp.</li>
+        <li>Handle by the edges and avoid touching the printed surface.</li>
+        <li>All prints are made with archival inks and acid-free paper, so they're built to last.</li>
+      </ul>
+    </div>
+
+    <div class="info-section reveal">
+      <h2 class="info-section-title">FAQ</h2>
+
+      <div class="faq-item">
+        <p class="faq-q">Are the prints signed and numbered?</p>
+        <p class="faq-a">All limited edition prints are hand-signed and numbered in pencil. Open edition prints are signed.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can I get a print framed?</p>
+        <p class="faq-a">I can arrange framing for most prints. <a href="#" onclick="showPage('contact')" style="color:var(--teal);text-decoration:none;">Get in touch</a> and I'll help you find the right option.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Do you do commissions?</p>
+        <p class="faq-a">Occasionally, depending on availability. <a href="#" onclick="showPage('contact')" style="color:var(--teal);text-decoration:none;">Drop me a message</a> and we can have a chat.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can I buy in person?</p>
+        <p class="faq-a">Yes! My work is stocked in several galleries and shops on Mull and the surrounding islands. Check the <a href="#" onclick="showPage('about')" style="color:var(--teal);text-decoration:none;">Stockists</a> section on the About page.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What paper do you print on?</p>
+        <p class="faq-a">I use a range of specialist printmaking papers, all 100% acid-free. Full details are listed on each product page.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Will a limited edition print sell out?</p>
+        <p class="faq-a">Once a limited edition is gone, it won't be reprinted. Sign up to the mailing list to hear about new releases first.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center;padding-top:2rem;border-top:1px solid var(--border);">
+      <p class="info-p" style="opacity:0.55;margin-bottom:1.5rem;">Still have a question?</p>
+      <a href="#" class="btn-primary" onclick="showPage('contact')">Get in Touch</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div><p class="footer-brand">Isle &amp; Ink</p><p class="footer-tagline">Handmade lino &amp; wood prints from Pennyghael, Isle of Mull. Wild landscapes, Hebridean wildlife, crafted with care.</p><div class="footer-socials"><a href="https://www.instagram.com/isle_and_ink" target="_blank" rel="noopener" class="social-ico">ig</a></div></div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="#" onclick="showPage('shop')">Original Prints</a></li><li><a href="#" onclick="showPage('shop')">Greeting Cards</a></li><li><a href="#" onclick="showPage('shop')">Bundles</a></li></ul></div>
+      <div class="footer-col"><h4>About</h4><ul><li><a href="#" onclick="showPage('about')">The Artist</a></li><li><a href="#" onclick="showPage('process')">The Process</a></li></ul></div>
+      <div class="footer-col"><h4>Info</h4><ul><li><a href="#" onclick="showPage('info')">Shipping &amp; Returns</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">© 2025 Isle and Ink · Eden Reeve</p><p class="footer-loc">📍 Pennyghael, Isle of Mull</p></div>
   </footer>
 </div>
 
@@ -1656,6 +1898,24 @@ footer {
       <div class="admin-section">
         <h2 class="admin-section-title">Greeting Cards</h2>
         <div id="admin-cards-list" class="admin-list"></div>
+      </div>
+      <div class="admin-section" id="admin-xmas-section" style="display:none;">
+        <h2 class="admin-section-title">Christmas Cards</h2>
+        <div id="admin-xmas-list" class="admin-list"></div>
+      </div>
+      <div class="admin-section" id="admin-bundles-section" style="display:none;">
+        <h2 class="admin-section-title">Bundles</h2>
+        <div id="admin-bundles-list" class="admin-list"></div>
+      </div>
+      <div id="admin-custom-cats-products"></div>
+      <div class="admin-section" id="admin-cats-section">
+        <h2 class="admin-section-title">Manage Categories</h2>
+        <p style="font-size:0.85rem;color:var(--ink);opacity:0.55;margin-bottom:1.25rem;">The built-in categories (Original Print, Greeting Card, Christmas Card, Bundle) are always available. Add extra ones here — they only appear on the shop page once they have products in them.</p>
+        <div id="admin-cats-list" class="admin-list"></div>
+        <div style="display:flex;gap:0.75rem;margin-top:1rem;align-items:center;flex-wrap:wrap;">
+          <input class="admin-input" id="new-cat-label" placeholder="e.g. Slate Prints" style="max-width:220px;">
+          <button class="admin-btn-primary" onclick="adminAddCategory()">+ Add Category</button>
+        </div>
       </div>
     </div>
   </div>
@@ -1750,16 +2010,16 @@ const PRODUCTS = {
   },
   'spring-on-iona': {
     name: 'Spring on Iona',
-    eyebrow: 'Limited Edition · Isle of Mull',
+    eyebrow: 'Limited Edition of 18 · Isle of Iona',
     price: 120,
     desc: 'A vibrant linocut reduction print capturing the colours of spring on the Isle of Iona.',
     specs: [
-      { key: 'Edition',    val: 'Limited Edition' },
+      { key: 'Edition',    val: 'Limited Edition of 18' },
       { key: 'Print type', val: 'Linocut Reduction' },
       { key: 'Print size', val: 'A3 (297 × 420mm)' }
     ],
     images: ['images/spring-on-iona.png'],
-    maxQty: null, showFraming: true, category: 'print'
+    maxQty: 18, showFraming: true, category: 'print'
   },
   'taking-a-dip': {
     name: 'Taking a Dip',
@@ -1803,76 +2063,184 @@ const PRODUCTS = {
   'card-sunset-puffins': {
     name: 'Sunset Puffins',
     eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3,
-    desc: 'A charming greeting card featuring puffins at sunset. Blank inside for your own message.',
+    price: 3.5,
+    desc: 'Two puffins perched on the rocks, bills touching, watching the sun drop behind the Treshnish Isles. All orange sky and golden water. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
     specs: [
       { key: 'Size',   val: 'A6' },
       { key: 'Inside', val: 'Blank' },
-      { key: 'Finish', val: 'Matt' }
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
     ],
-    images: ['https://lh3.googleusercontent.com/d/1YCCJcOjxvlDVJJQ_frjcMPfExsjQD53j'],
+    images: ['images/puffin-sunset.jpg'],
     maxQty: null, showFraming: false, category: 'card'
   },
   'card-celebration-puffin': {
     name: 'Celebration Puffin',
     eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3,
-    desc: 'A festive puffin greeting card, perfect for birthdays or any celebration. Blank inside.',
+    price: 3.5,
+    desc: 'A puffin in a party hat, wings out, absolutely living for it. The ideal card for anyone worth celebrating. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
     specs: [
       { key: 'Size',   val: 'A6' },
       { key: 'Inside', val: 'Blank' },
-      { key: 'Finish', val: 'Matt' }
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
     ],
-    images: ['https://lh3.googleusercontent.com/d/1z89bnOJXJ2V1ocsGfzz0yoIBqa6uXGyQ'],
+    images: ['images/celebration-puffin.jpg'],
     maxQty: null, showFraming: false, category: 'card'
   },
   'card-ardalanish': {
     name: 'Ardalanish',
     eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3,
-    desc: 'A beautiful card of Ardalanish Bay, hand-printed in Pennyghael. Blank inside.',
+    price: 3.5,
+    desc: 'Two Hebridean sheep grazing in a wildflower meadow above Ardalanish Beach, with the Paps of Jura sitting low on the horizon. A west coast scene that feels instantly familiar if you know Mull. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
     specs: [
       { key: 'Size',   val: 'A6' },
       { key: 'Inside', val: 'Blank' },
-      { key: 'Finish', val: 'Matt' }
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
     ],
-    images: ['https://lh3.googleusercontent.com/d/1QjBj73OR0259Ur5zyVHAIOh-HLqB4dZu'],
+    images: ['images/ardalanish-card.jpg'],
     maxQty: null, showFraming: false, category: 'card'
   },
   'card-ionas-beach': {
     name: "Iona's Beach",
     eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3,
-    desc: "A serene card of Iona's white sand beach. Blank inside for your own words.",
+    price: 3.5,
+    desc: "The White Strand of the Monk on a clear day, looking out past the dunes and gate to Eilean Annraidh on the horizon. Iona at its quietest. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
     specs: [
       { key: 'Size',   val: 'A6' },
       { key: 'Inside', val: 'Blank' },
-      { key: 'Finish', val: 'Matt' }
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
     ],
-    images: ['https://lh3.googleusercontent.com/d/1Yt7KHqep4vVj0Bn_2PEGeYdL8jKCuJFZ'],
+    images: ['images/iona-beach.png'],
     maxQty: null, showFraming: false, category: 'card'
   },
   'card-treshnish-puffins': {
-    name: 'Treshnish Puffins',
+    name: 'Treshnish Isle Puffins',
     eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3,
-    desc: 'A delightful card featuring puffins from the Treshnish Isles. Blank inside.',
+    price: 3.5,
+    desc: "Puffins crowding the clifftops of Lunga on a summer's day, with the Treshnish Isles stretching out behind them. If you've made the boat trip, you'll recognise this immediately. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
     specs: [
       { key: 'Size',   val: 'A6' },
       { key: 'Inside', val: 'Blank' },
-      { key: 'Finish', val: 'Matt' }
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
     ],
-    images: ['https://lh3.googleusercontent.com/d/1cKVgUecvDTsEqPckxBo7uJViRpzHz9hB'],
+    images: ['images/treshnish-puffins.png'],
     maxQty: null, showFraming: false, category: 'card'
+  },
+  'card-highland-coos': {
+    name: 'Highland Coos',
+    eyebrow: 'Greeting Card · Isle of Mull',
+    price: 3.5,
+    desc: 'The Pennyghael coos wading through the still waters of Loch Beg, with Ben More rising behind them. Classic Mull. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
+    specs: [
+      { key: 'Size',   val: 'A6' },
+      { key: 'Inside', val: 'Blank' },
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
+    ],
+    images: ['images/pennyghael-coos.png'],
+    maxQty: null, showFraming: false, category: 'card'
+  },
+  'card-iona-ruins': {
+    name: 'Iona Ruins',
+    eyebrow: 'Greeting Card · Isle of Mull',
+    price: 3.5,
+    desc: "The ruined Bishop's House on Iona, surrounded by grazing sheep and open grass, sea visible beyond. Hundreds of years of history sitting quietly in a field. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    specs: [
+      { key: 'Size',   val: 'A6' },
+      { key: 'Inside', val: 'Blank' },
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
+    ],
+    images: ['images/iona-ruins.png'],
+    maxQty: null, showFraming: false, category: 'card'
+  },
+  'card-tobermory': {
+    name: 'Tobermory',
+    eyebrow: 'Greeting Card · Isle of Mull',
+    price: 3.5,
+    desc: 'The CalMac ferry cutting through the bay, colourful houses lining the harbour front, summer light on the water. Tobermory at its best. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
+    specs: [
+      { key: 'Size',   val: 'A6' },
+      { key: 'Inside', val: 'Blank' },
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
+    ],
+    images: ['images/tobermory-card.jpg'],
+    maxQty: null, showFraming: false, category: 'card'
+  },
+  'card-iona-abbey': {
+    name: 'Iona Abbey',
+    eyebrow: 'Greeting Card · Isle of Mull',
+    price: 3.5,
+    desc: 'Iona Abbey from across the water, with small boats bobbing in the turquoise bay and Dun I rising to the right. Calm and timeless. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
+    specs: [
+      { key: 'Size',   val: 'A6' },
+      { key: 'Inside', val: 'Blank' },
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
+    ],
+    images: ['images/iona-abbey-card.png'],
+    maxQty: null, showFraming: false, category: 'card'
+  },
+  'card-loch-na-keal': {
+    name: 'Loch Na Keal',
+    eyebrow: 'Greeting Card · Isle of Mull',
+    price: 3.5,
+    desc: 'Otters on the rocks at Loch na Keal, the sun just clearing the horizon and catching the still water. An early morning scene that\'s worth the cold. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
+    specs: [
+      { key: 'Size',   val: 'A6' },
+      { key: 'Inside', val: 'Blank' },
+      { key: 'Paper',  val: '350gsm recycled card' },
+      { key: 'Envelope', val: 'Brown recycled' }
+    ],
+    images: ['images/otters-card.png'],
+    maxQty: null, showFraming: false, category: 'card'
+  },
+  'bundle-6-cards': {
+    name: 'Any 6 Cards',
+    eyebrow: 'Bundle · Save £6',
+    price: 12,
+    desc: 'Pick any 6 greeting cards from the collection for just £12, that\'s £2 each. Add to basket and let us know which cards you\'d like in the notes field. Mix and match freely.',
+    specs: [
+      { key: 'Cards included', val: 'Any 6 from the range' },
+      { key: 'Price per card', val: '£2.00 each' },
+      { key: 'Format',         val: 'A6 · Blank inside · Matt finish' }
+    ],
+    images: ['images/scotland-greeting-cards.png'],
+    maxQty: null, showFraming: false, category: 'bundle'
+  },
+  'bundle-12-cards': {
+    name: 'Any 12 Cards',
+    eyebrow: 'Bundle · Best Value',
+    price: 20,
+    desc: 'Pick any 12 greeting cards from the collection for just £20, that\'s under £1.67 each. Add to basket and let us know which cards you\'d like in the notes field. Mix and match freely.',
+    specs: [
+      { key: 'Cards included', val: 'Any 12 from the range' },
+      { key: 'Price per card', val: '£1.67 each' },
+      { key: 'Format',         val: 'A6 · Blank inside · Matt finish' }
+    ],
+    images: ['images/mixed-pack-iona.png'],
+    maxQty: null, showFraming: false, category: 'bundle'
   }
 };
 
 // ─── Active products (localStorage overrides defaults) ───────────────────────
+// Bump this number whenever the default PRODUCTS catalogue changes in code.
+// The browser will automatically drop the cached version and reload from defaults.
+const PRODUCTS_VERSION = 3;
+
 let activeProducts = (() => {
   try {
-    const saved = localStorage.getItem('isle_ink_products');
-    if (saved) return JSON.parse(saved);
+    const saved        = localStorage.getItem('isle_ink_products');
+    const savedVersion = parseInt(localStorage.getItem('isle_ink_products_version') || '0');
+    if (saved && savedVersion === PRODUCTS_VERSION) return JSON.parse(saved);
   } catch(e) {}
+  localStorage.removeItem('isle_ink_products');
+  localStorage.setItem('isle_ink_products_version', String(PRODUCTS_VERSION));
   return Object.assign({}, PRODUCTS);
 })();
 
@@ -1884,9 +2252,9 @@ function renderShop() {
   const ITEM_URL = 'https://beldeth.github.io/isle-and-ink/';
   const delays = ['', ' d1', ' d2', ' d3'];
 
-  const prints = Object.entries(activeProducts).filter(([, p]) => p.category === 'print');
-  document.getElementById('shop-prints-grid').innerHTML = prints.map(([id, p], i) => `
-    <div class="shop-card reveal${delays[i % 4]}" onclick="if(!event.target.closest('button')) showPage('product','${id}')">
+  function makePrintCard(id, p, i) {
+    return `
+    <div class="shop-card reveal${delays[i % 4]}" data-category="${p.category}" onclick="if(!event.target.closest('button')) showPage('product','${id}')">
       <div style="aspect-ratio:1;overflow:hidden;">
         <img src="${p.images[0]}" class="shop-card-img" style="width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.05);" alt="${p.name}">
       </div>
@@ -1902,11 +2270,12 @@ function renderShop() {
             ${p.maxQty ? `data-item-max-quantity="${p.maxQty}"` : ''}>+</button>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }
 
-  const cards = Object.entries(activeProducts).filter(([, p]) => p.category === 'card');
-  document.getElementById('shop-cards-grid').innerHTML = cards.map(([id, p], i) => `
-    <div class="shop-card reveal${delays[i % 4]}" onclick="if(!event.target.closest('button')) showPage('product','${id}')">
+  function makeCardCard(id, p, i) {
+    return `
+    <div class="shop-card reveal${delays[i % 4]}" data-category="${p.category}" onclick="if(!event.target.closest('button')) showPage('product','${id}')">
       <img src="${p.images[0]}" class="shop-card-img" style="aspect-ratio:3/4;display:block;object-fit:cover;" alt="${p.name}">
       <div class="shop-card-body">
         <p class="shop-card-name">${p.name}</p>
@@ -1919,13 +2288,170 @@ function renderShop() {
             data-item-image="${p.images[0]}">+</button>
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }
+
+  const byOrder = ([, a], [, b]) => (a.order ?? 99) - (b.order ?? 99);
+  const prints  = Object.entries(activeProducts).filter(([, p]) => p.category === 'print').sort(byOrder);
+  const cards   = Object.entries(activeProducts).filter(([, p]) => p.category === 'card').sort(byOrder);
+  const xmas    = Object.entries(activeProducts).filter(([, p]) => p.category === 'christmas-card').sort(byOrder);
+  const bundles = Object.entries(activeProducts).filter(([, p]) => p.category === 'bundle').sort(byOrder);
+
+  document.getElementById('shop-prints-grid').innerHTML = prints.map(([id, p], i) => makePrintCard(id, p, i)).join('');
+  document.getElementById('shop-cards-grid').innerHTML  = cards.map(([id, p], i)  => makeCardCard(id, p, i)).join('');
+
+  const xmasGrid    = document.getElementById('shop-xmas-grid');
+  const xmasSection = document.getElementById('shop-xmas-section');
+  const xmasDivider = document.getElementById('shop-divider-2');
+  if (xmasGrid)    xmasGrid.innerHTML = xmas.map(([id, p], i) => makeCardCard(id, p, i)).join('');
+  if (xmasSection) xmasSection.style.display = xmas.length ? '' : 'none';
+  if (xmasDivider) xmasDivider.style.display = xmas.length ? '' : 'none';
+
+  const bundlesGrid    = document.getElementById('shop-bundles-grid');
+  const bundlesSection = document.getElementById('shop-bundles-section');
+  const bundlesDivider = document.getElementById('shop-divider-3');
+  function makeBundleCard(id, p, i) {
+    const badge = p.eyebrow.split('·')[1]?.trim() || 'Bundle';
+    return `
+    <div class="shop-card reveal${delays[i % 4]}" data-category="${p.category}" onclick="if(!event.target.closest('button')) showPage('product','${id}')">
+      <div style="aspect-ratio:3/4;overflow:hidden;position:relative;">
+        <img src="${p.images[0]}" class="shop-card-img" style="width:100%;height:100%;display:block;object-fit:cover;" alt="${p.name}">
+        <div style="position:absolute;top:0.7rem;right:0.7rem;background:var(--amber);color:white;font-size:0.68rem;font-weight:600;padding:0.25rem 0.65rem;border-radius:1rem;letter-spacing:0.07em;text-transform:uppercase;">${badge}</div>
+      </div>
+      <div class="shop-card-body">
+        <p class="shop-card-name">${p.name}</p>
+        <p class="shop-card-sub">${p.eyebrow}</p>
+        <div class="shop-card-footer">
+          <p class="shop-card-price">£${p.price}</p>
+          <button class="shop-card-add snipcart-add-item"
+            data-item-id="${id}" data-item-name="${p.name}" data-item-price="${p.price}"
+            data-item-url="${ITEM_URL}" data-item-description="${p.eyebrow}"
+            data-item-image="${p.images[0]}"
+            data-item-custom1-name="Which cards would you like? (list them here)"
+            data-item-custom1-type="textarea"
+            data-item-custom1-required="true">+</button>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  if (bundlesGrid)    bundlesGrid.innerHTML = bundles.map(([id, p], i) => makeBundleCard(id, p, i)).join('');
+  if (bundlesSection) bundlesSection.style.display = bundles.length ? '' : 'none';
+  if (bundlesDivider) bundlesDivider.style.display = bundles.length ? '' : 'none';
+
+  // Custom category sections
+  const customSectionsEl = document.getElementById('shop-custom-sections');
+  if (customSectionsEl) {
+    customSectionsEl.innerHTML = getCustomCats().map(cat => {
+      const items = Object.entries(activeProducts).filter(([, p]) => p.category === cat.id).sort(byOrder);
+      if (!items.length) return '';
+      return `
+        <hr class="shop-divider">
+        <div class="shop-section" id="shop-custom-${cat.id}-section">
+          <h2 class="shop-section-title"><em>${cat.label}</em></h2>
+          <div class="shop-grid" id="shop-custom-${cat.id}-grid">
+            ${items.map(([id, p], i) => makePrintCard(id, p, i)).join('')}
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // Custom filter buttons
+  const customFilterBtnsEl = document.getElementById('shop-custom-filter-btns');
+  if (customFilterBtnsEl) {
+    customFilterBtnsEl.innerHTML = getCustomCats()
+      .filter(cat => Object.values(activeProducts).some(p => p.category === cat.id))
+      .map(cat => `<button class="filter-btn" data-filter="${cat.id}">${cat.label}</button>`)
+      .join('');
+    customFilterBtnsEl.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterShop(btn.dataset.filter);
+      });
+    });
+  }
 
   setTimeout(() => observeReveals(), 100);
 }
 
 // ─── Admin ────────────────────────────────────────────────────────────────────
 const ADMIN_PASS = 'InkyChicken';
+
+// ─── Custom categories ────────────────────────────────────────────────────────
+const CUSTOM_CATS_KEY = 'isle_ink_custom_cats';
+function getCustomCats() {
+  try { return JSON.parse(localStorage.getItem(CUSTOM_CATS_KEY) || '[]'); } catch(e) { return []; }
+}
+function saveCustomCats(cats) {
+  localStorage.setItem(CUSTOM_CATS_KEY, JSON.stringify(cats));
+}
+
+function categoryLabel(cat) {
+  const builtIn = { print: 'Original Print', card: 'Greeting Card', 'christmas-card': 'Christmas Card', bundle: 'Bundle' };
+  if (builtIn[cat]) return builtIn[cat];
+  const custom = getCustomCats().find(c => c.id === cat);
+  return custom ? custom.label : cat;
+}
+
+function buildCategoryOptions(selected) {
+  const builtIn = [
+    { id: 'print',          label: 'Original Print' },
+    { id: 'card',           label: 'Greeting Card' },
+    { id: 'christmas-card', label: 'Christmas Card' },
+    { id: 'bundle',         label: 'Bundle' },
+  ];
+  return [...builtIn, ...getCustomCats()]
+    .map(c => `<option value="${c.id}"${c.id === selected ? ' selected' : ''}>${c.label}</option>`)
+    .join('');
+}
+
+function renderAdminCategories() {
+  const listEl = document.getElementById('admin-cats-list');
+  if (!listEl) return;
+  const cats = getCustomCats();
+  if (!cats.length) {
+    listEl.innerHTML = '<p style="font-size:0.85rem;opacity:0.45;margin:0 0 0.5rem;">No custom categories yet.</p>';
+    return;
+  }
+  listEl.innerHTML = cats.map(c => `
+    <div class="admin-product-row" style="padding:0.75rem 1rem;">
+      <div class="admin-product-info">
+        <p class="admin-product-name">${c.label}</p>
+        <p class="admin-product-meta">id: ${c.id}</p>
+      </div>
+      <div class="admin-product-actions">
+        <button class="admin-btn-delete" onclick="adminDeleteCategory('${c.id}')">Delete</button>
+      </div>
+    </div>`).join('');
+}
+
+function adminAddCategory() {
+  const input = document.getElementById('new-cat-label');
+  const label = input.value.trim();
+  if (!label) { alert('Please enter a category name.'); return; }
+  const id = label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const builtIn = ['print', 'card', 'christmas-card', 'bundle'];
+  const cats = getCustomCats();
+  if (builtIn.includes(id) || cats.find(c => c.id === id)) { alert('A category with that name already exists.'); return; }
+  cats.push({ id, label });
+  saveCustomCats(cats);
+  input.value = '';
+  renderAdminCategories();
+  renderShop();
+}
+
+function adminDeleteCategory(id) {
+  const count = Object.values(adminDraftProducts).filter(p => p.category === id).length;
+  const msg = count > 0
+    ? `This category has ${count} product(s). Deleting it won't delete the products, but they won't appear in any category section. Delete anyway?`
+    : 'Delete this category?';
+  if (!confirm(msg)) return;
+  saveCustomCats(getCustomCats().filter(c => c.id !== id));
+  renderAdminCategories();
+  renderAdminDashboard();
+  renderShop();
+}
 
 function adminLogin() {
   const input = document.getElementById('admin-password-input');
@@ -1960,6 +2486,7 @@ function adminLogout() {
 
 function saveAdminProducts() {
   localStorage.setItem('isle_ink_products', JSON.stringify(activeProducts));
+  localStorage.setItem('isle_ink_products_version', String(PRODUCTS_VERSION));
   renderShop();
 }
 
@@ -1982,6 +2509,7 @@ function adminMarkUnsaved(dirty) {
 function adminCommitChanges() {
   activeProducts = JSON.parse(JSON.stringify(adminDraftProducts));
   localStorage.setItem('isle_ink_products', JSON.stringify(activeProducts));
+  localStorage.setItem('isle_ink_products_version', String(PRODUCTS_VERSION));
   renderShop();
   adminMarkUnsaved(false);
   sessionStorage.removeItem('isle_ink_admin');
@@ -1997,10 +2525,37 @@ function adminDiscardChanges() {
 }
 
 function renderAdminDashboard() {
-  const prints = Object.entries(adminDraftProducts).filter(([, p]) => p.category === 'print');
-  const cards  = Object.entries(adminDraftProducts).filter(([, p]) => p.category === 'card');
+  const prints  = Object.entries(adminDraftProducts).filter(([, p]) => p.category === 'print');
+  const cards   = Object.entries(adminDraftProducts).filter(([, p]) => p.category === 'card');
+  const xmas    = Object.entries(adminDraftProducts).filter(([, p]) => p.category === 'christmas-card');
+  const bundles = Object.entries(adminDraftProducts).filter(([, p]) => p.category === 'bundle');
+
   document.getElementById('admin-prints-list').innerHTML = prints.map(([id, p]) => adminProductRow(id, p)).join('');
   document.getElementById('admin-cards-list').innerHTML  = cards.map(([id, p])  => adminProductRow(id, p)).join('');
+
+  const xmasList    = document.getElementById('admin-xmas-list');
+  const xmasSection = document.getElementById('admin-xmas-section');
+  if (xmasList)    xmasList.innerHTML = xmas.map(([id, p]) => adminProductRow(id, p)).join('');
+  if (xmasSection) xmasSection.style.display = xmas.length ? '' : 'none';
+
+  const bundlesList    = document.getElementById('admin-bundles-list');
+  const bundlesSection = document.getElementById('admin-bundles-section');
+  if (bundlesList)    bundlesList.innerHTML = bundles.map(([id, p]) => adminProductRow(id, p)).join('');
+  if (bundlesSection) bundlesSection.style.display = bundles.length ? '' : 'none';
+
+  // Custom categories
+  const customCatsContainer = document.getElementById('admin-custom-cats-products');
+  if (customCatsContainer) {
+    customCatsContainer.innerHTML = getCustomCats().map(cat => {
+      const items = Object.entries(adminDraftProducts).filter(([, p]) => p.category === cat.id);
+      return `<div class="admin-section" style="${items.length ? '' : 'display:none;'}">
+        <h2 class="admin-section-title">${cat.label}</h2>
+        <div class="admin-list">${items.map(([id, p]) => adminProductRow(id, p)).join('')}</div>
+      </div>`;
+    }).join('');
+  }
+
+  renderAdminCategories();
 }
 
 function adminProductRow(id, p) {
@@ -2010,7 +2565,7 @@ function adminProductRow(id, p) {
       <div class="admin-product-thumb"><img src="${p.images[0]}" alt="${p.name}"></div>
       <div class="admin-product-info">
         <p class="admin-product-name">${p.name}</p>
-        <p class="admin-product-meta">£${p.price} · ${p.eyebrow}</p>
+        <p class="admin-product-meta">£${p.price} · ${p.eyebrow} · <span style="background:var(--teal);color:white;font-size:0.68rem;padding:0.1rem 0.45rem;border-radius:1rem;font-weight:500;">${categoryLabel(p.category)}</span></p>
       </div>
       <div class="admin-product-actions">
         <button class="admin-btn-edit" onclick="adminShowEditForm('${id}')">Edit</button>
@@ -2021,9 +2576,12 @@ function adminProductRow(id, p) {
       <div class="admin-form-grid">
         <label class="admin-label">Name<input class="admin-input" id="edit-name-${id}" value="${esc(p.name)}"></label>
         <label class="admin-label">Price (£)<input class="admin-input" type="number" id="edit-price-${id}" value="${p.price}" min="0" step="0.01"></label>
+        <label class="admin-label">Category<select class="admin-input" id="edit-category-${id}">${buildCategoryOptions(p.category)}</select></label>
+        <label class="admin-label">Display order<input class="admin-input" type="number" id="edit-order-${id}" value="${p.order ?? ''}" min="1" step="1" placeholder="e.g. 1 = first"></label>
         <label class="admin-label" style="grid-column:1/-1;">Edition / Sub-text<input class="admin-input" id="edit-eyebrow-${id}" value="${esc(p.eyebrow)}"></label>
         <label class="admin-label" style="grid-column:1/-1;">Description<textarea class="admin-input admin-textarea" id="edit-desc-${id}">${esc(p.desc)}</textarea></label>
         <label class="admin-label" style="grid-column:1/-1;">Main Image (URL or path)<input class="admin-input" id="edit-image0-${id}" value="${esc(p.images[0])}"></label>
+        <label class="admin-label">Paper size <span style="font-weight:400;opacity:0.55;">(prints only)</span><input class="admin-input" id="edit-papersize-${id}" value="${esc((p.specs||[]).find(s=>s.key==='Paper size')?.val||'')}" placeholder="e.g. 38 × 50cm"></label>
         <label class="admin-label">Alt Image 1: framed / on wall<input class="admin-input" id="edit-image1-${id}" value="${esc(p.images[1] || '')}" placeholder="Leave blank if not ready"></label>
         <label class="admin-label">Alt Image 2: detail / close-up<input class="admin-input" id="edit-image2-${id}" value="${esc(p.images[2] || '')}" placeholder="Leave blank if not ready"></label>
       </div>
@@ -2047,8 +2605,22 @@ function adminSaveProduct(id) {
   const img0    = document.getElementById('edit-image0-'  + id).value.trim();
   const img1    = document.getElementById('edit-image1-'  + id).value.trim();
   const img2    = document.getElementById('edit-image2-'  + id).value.trim();
+  const category  = document.getElementById('edit-category-' + id).value;
+  const orderVal  = document.getElementById('edit-order-' + id).value;
+  const order     = orderVal !== '' ? parseInt(orderVal) : undefined;
+  const paperSize = document.getElementById('edit-papersize-' + id).value.trim();
   if (!name || isNaN(price)) { alert('Name and Price are required.'); return; }
-  adminDraftProducts[id] = { ...adminDraftProducts[id], name, price, eyebrow, desc,
+  // Update Paper size spec, preserving all other specs
+  let specs = [...(adminDraftProducts[id].specs || [])];
+  const psIdx = specs.findIndex(s => s.key === 'Paper size');
+  if (paperSize) {
+    if (psIdx >= 0) specs[psIdx] = { key: 'Paper size', val: paperSize };
+    else specs.push({ key: 'Paper size', val: paperSize });
+  } else if (psIdx >= 0) {
+    specs.splice(psIdx, 1);
+  }
+  adminDraftProducts[id] = { ...adminDraftProducts[id], name, price, eyebrow, desc, category, specs,
+    ...(order !== undefined ? { order } : {}),
     images: [img0, img1, img2].filter((v, i) => i === 0 || v) };
   adminMarkUnsaved(true);
   renderAdminDashboard();
@@ -2071,14 +2643,12 @@ function adminToggleAddForm() {
       <label class="admin-label">Name<input class="admin-input" id="new-name" placeholder="e.g. Mull Otter"></label>
       <label class="admin-label">Price (£)<input class="admin-input" type="number" id="new-price" placeholder="48" min="0" step="0.01"></label>
       <label class="admin-label">Category
-        <select class="admin-input" id="new-category">
-          <option value="print">Original Print</option>
-          <option value="card">Greeting Card</option>
-        </select>
+        <select class="admin-input" id="new-category">${buildCategoryOptions('print')}</select>
       </label>
       <label class="admin-label">Edition / Sub-text<input class="admin-input" id="new-eyebrow" placeholder="Open Edition · Isle of Mull"></label>
       <label class="admin-label" style="grid-column:1/-1;">Description<textarea class="admin-input admin-textarea" id="new-desc" placeholder="A beautiful linocut print..."></textarea></label>
       <label class="admin-label" style="grid-column:1/-1;">Main Image (URL or path)<input class="admin-input" id="new-image0" placeholder="images/my-print.jpg"></label>
+      <label class="admin-label">Paper size <span style="font-weight:400;opacity:0.55;">(prints only, e.g. 38 × 50cm)</span><input class="admin-input" id="new-papersize" placeholder="e.g. 38 × 50cm"></label>
       <label class="admin-label">Alt Image 1: framed / on wall<input class="admin-input" id="new-image1" placeholder="Leave blank if not ready"></label>
       <label class="admin-label">Alt Image 2: detail / close-up<input class="admin-input" id="new-image2" placeholder="Leave blank if not ready"></label>
     </div>
@@ -2094,17 +2664,29 @@ function adminAddProduct() {
   const category = document.getElementById('new-category').value;
   const eyebrow  = document.getElementById('new-eyebrow').value.trim();
   const desc     = document.getElementById('new-desc').value.trim();
-  const img0     = document.getElementById('new-image0').value.trim();
-  const img1     = document.getElementById('new-image1').value.trim();
-  const img2     = document.getElementById('new-image2').value.trim();
+  const img0      = document.getElementById('new-image0').value.trim();
+  const img1      = document.getElementById('new-image1').value.trim();
+  const img2      = document.getElementById('new-image2').value.trim();
+  const paperSize = document.getElementById('new-papersize').value.trim();
   if (!name || isNaN(price) || !img0) { alert('Name, Price and Main Image are required.'); return; }
   const id = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   if (adminDraftProducts[id]) { alert('A product with that name already exists.'); return; }
   const images = [img0, img1, img2].filter((v, i) => i === 0 || v);
+  const isCard = category === 'card' || category === 'christmas-card';
+  const cardSpecs = isCard ? [
+    { key: 'Size',     val: 'A6' },
+    { key: 'Inside',   val: 'Blank' },
+    { key: 'Paper',    val: '350gsm recycled card' },
+    { key: 'Envelope', val: 'Brown recycled' }
+  ] : [];
+  const specs = isCard ? cardSpecs : (paperSize ? [{ key: 'Paper size', val: paperSize }] : []);
+  const defaultEyebrow = category === 'print' ? 'Open Edition · Isle of Mull'
+    : category === 'christmas-card' ? 'Christmas Card · Isle of Mull'
+    : 'Greeting Card · Isle of Mull';
   adminDraftProducts[id] = {
     name, price,
-    eyebrow: eyebrow || (category === 'print' ? 'Open Edition · Isle of Mull' : 'Greeting Card · Isle of Mull'),
-    desc, specs: [], images, maxQty: null,
+    eyebrow: eyebrow || defaultEyebrow,
+    desc, specs, images, maxQty: null,
     showFraming: category === 'print', category
   };
   adminMarkUnsaved(true);
@@ -2141,6 +2723,9 @@ function loadProduct(id) {
   const framingEl = document.querySelector('.product-framing');
   if (framingEl) framingEl.style.display = p.showFraming ? '' : 'none';
 
+  const handPulledEl = document.getElementById('product-handpulled-note');
+  if (handPulledEl) handPulledEl.style.display = p.category === 'print' ? '' : 'none';
+
   document.querySelector('.qty-val').textContent = '1';
 
   const addBtn = document.querySelector('#btn-add-to-basket');
@@ -2156,6 +2741,15 @@ function loadProduct(id) {
       addBtn.dataset.itemMaxQuantity = p.maxQty;
     } else {
       delete addBtn.dataset.itemMaxQuantity;
+    }
+    if (p.category === 'bundle') {
+      addBtn.dataset.itemCustom1Name = 'Which cards would you like? (list them here)';
+      addBtn.dataset.itemCustom1Type = 'textarea';
+      addBtn.dataset.itemCustom1Required = 'true';
+    } else {
+      delete addBtn.dataset.itemCustom1Name;
+      delete addBtn.dataset.itemCustom1Type;
+      delete addBtn.dataset.itemCustom1Required;
     }
   }
 }
@@ -2242,10 +2836,56 @@ window.addEventListener('scroll', () => {
 });
 
 // Filter buttons (shop page)
+function filterShop(filter) {
+  const sectionMap = {
+    print:           'shop-prints-section',
+    card:            'shop-cards-section',
+    'christmas-card':'shop-xmas-section',
+    bundle:          'shop-bundles-section',
+  };
+  const dividerMap = {
+    card:            'shop-divider-1',
+    'christmas-card':'shop-divider-2',
+    bundle:          'shop-divider-3',
+  };
+  Object.entries(sectionMap).forEach(([cat, id]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (filter === 'all') {
+      const grid = el.querySelector('[id$="-grid"]');
+      el.style.display = (grid && grid.children.length) ? '' : 'none';
+    } else {
+      el.style.display = (filter === cat) ? '' : 'none';
+    }
+  });
+  Object.entries(dividerMap).forEach(([cat, id]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (filter === 'all') {
+      const section = document.getElementById(sectionMap[cat]);
+      el.style.display = (section && section.style.display !== 'none') ? '' : 'none';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+
+  // Custom categories
+  getCustomCats().forEach(cat => {
+    const secEl = document.getElementById('shop-custom-' + cat.id + '-section');
+    if (!secEl) return;
+    if (filter === 'all') {
+      secEl.style.display = '';
+    } else {
+      secEl.style.display = (filter === cat.id) ? '' : 'none';
+    }
+  });
+}
+
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+    filterShop(btn.dataset.filter || 'all');
   });
 });
 
@@ -2262,9 +2902,71 @@ document.querySelectorAll('.qty-btn').forEach(btn => {
   });
 });
 
+// ─── Mailchimp newsletter signup ─────────────────────────────────────────────
+// Paste your Mailchimp form URL here (from Audience > Signup forms > Embedded forms)
+const MAILCHIMP_URL = 'https://isleandink.us22.list-manage.com/subscribe/post?u=807c4541d38eb2eb8c6adb593&id=3d683a8a12&f_id=008ac2e1f0';
+
+function mailchimpSignup(form) {
+  const email = form.querySelector('input[name="EMAIL"]').value;
+  const msg   = form.nextElementSibling;
+  const btn   = form.querySelector('button[type="submit"]');
+  if (!email) return;
+
+  btn.textContent = '...';
+  btn.disabled = true;
+
+  const url = MAILCHIMP_URL.replace('/post?', '/post-json?') + '&EMAIL=' + encodeURIComponent(email) + '&c=mcCallback';
+  window.mcCallback = function(data) {
+    btn.textContent = 'Join';
+    btn.disabled = false;
+    msg.style.display = 'block';
+    if (data.result === 'success') {
+      msg.style.color = 'var(--teal)';
+      msg.textContent = 'You\'re in! Thank you for signing up.';
+      form.reset();
+    } else {
+      msg.style.color = '#c4621a';
+      msg.textContent = data.msg.includes('already subscribed') ? 'You\'re already signed up!' : 'Something went wrong — please try again.';
+    }
+    delete window.mcCallback;
+  };
+
+  const script = document.createElement('script');
+  script.src = url;
+  document.body.appendChild(script);
+  script.onload = () => script.remove();
+}
+
 // Initial shop render + reveals
 renderShop();
 observeReveals();
+
+// ─── Contact form (Formspree) ─────────────────────────────────────────────────
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  try {
+    const res = await fetch(this.action, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      this.style.display = 'none';
+      document.getElementById('contact-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      alert('Something went wrong. Please try emailing eden@isleandink.com directly.');
+    }
+  } catch {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('Something went wrong. Please try emailing eden@isleandink.com directly.');
+  }
+});
 </script>
 <div hidden id="snipcart"
   data-api-key="YzM1Mzc5NWEtNmQyMi00ZWJhLWIzNjctOWVmNzQxZWU3OTkzNjM5MDg5MzQyNzk5Njc4ODgw"
