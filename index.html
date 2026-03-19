@@ -2464,13 +2464,7 @@ function renderShop() {
         <p class="shop-card-sub">${p.eyebrow}</p>
         <div class="shop-card-footer">
           <p class="shop-card-price">£${p.price}</p>
-          <button class="shop-card-add snipcart-add-item"
-            data-item-id="${id}" data-item-name="${p.name}" data-item-price="${p.price}"
-            data-item-url="${ITEM_URL}" data-item-description="${p.eyebrow}"
-            data-item-image="${p.images[0]}"
-            data-item-custom1-name="Which cards would you like? (list them here)"
-            data-item-custom1-type="textarea"
-            data-item-custom1-required="true">+</button>
+          <button class="shop-card-add" onclick="event.stopPropagation(); showPage('product','${id}')">+</button>
         </div>
       </div>
     </div>`;
@@ -2884,13 +2878,28 @@ function loadProduct(id) {
       delete addBtn.dataset.itemMaxQuantity;
     }
     if (p.category === 'bundle') {
-      addBtn.dataset.itemCustom1Name = 'Which cards would you like? (list them here)';
-      addBtn.dataset.itemCustom1Type = 'textarea';
-      addBtn.dataset.itemCustom1Required = 'true';
+      const cardOptions = Object.values(activeProducts)
+        .filter(prod => prod.category === 'card' || prod.category === 'christmas-card')
+        .map(prod => prod.name)
+        .join('|');
+      const bundleSize = id === 'bundle-12-cards' ? 12 : 6;
+      for (let i = 1; i <= bundleSize; i++) {
+        addBtn.dataset[`itemCustom${i}Name`] = `Card ${i}`;
+        addBtn.dataset[`itemCustom${i}Options`] = cardOptions;
+        addBtn.dataset[`itemCustom${i}Required`] = 'true';
+      }
+      for (let i = bundleSize + 1; i <= 12; i++) {
+        delete addBtn.dataset[`itemCustom${i}Name`];
+        delete addBtn.dataset[`itemCustom${i}Options`];
+        delete addBtn.dataset[`itemCustom${i}Required`];
+      }
     } else {
-      delete addBtn.dataset.itemCustom1Name;
-      delete addBtn.dataset.itemCustom1Type;
-      delete addBtn.dataset.itemCustom1Required;
+      for (let i = 1; i <= 12; i++) {
+        delete addBtn.dataset[`itemCustom${i}Name`];
+        delete addBtn.dataset[`itemCustom${i}Options`];
+        delete addBtn.dataset[`itemCustom${i}Required`];
+        delete addBtn.dataset[`itemCustom${i}Type`];
+      }
     }
   }
 }
