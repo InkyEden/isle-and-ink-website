@@ -2257,6 +2257,25 @@ let activeProducts = (() => {
   return Object.assign({}, PRODUCTS);
 })();
 
+// ─── Snipcart validation: inject hidden product items so crawler can verify prices ─
+(function injectSnipcartValidationItems() {
+  const container = document.createElement('div');
+  container.id = 'snipcart-validation-items';
+  container.style.display = 'none';
+  Object.entries(activeProducts).forEach(([id, p]) => {
+    const btn = document.createElement('button');
+    btn.className = 'snipcart-add-item';
+    btn.dataset.itemId = id;
+    btn.dataset.itemName = p.name;
+    btn.dataset.itemPrice = p.price;
+    btn.dataset.itemUrl = 'https://inkyeden.github.io/isle-and-ink-website/';
+    btn.dataset.itemDescription = p.eyebrow || '';
+    btn.dataset.itemImage = p.images[0] || '';
+    container.appendChild(btn);
+  });
+  document.body.appendChild(container);
+})();
+
 // Staging copy , all admin edits go here; only committed on Save & Exit
 let adminDraftProducts = {};
 
