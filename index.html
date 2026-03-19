@@ -1234,11 +1234,11 @@ footer {
     </div>
     <div class="hero-right">
       <div class="hero-landscape" style="background:#1a2744; position:relative; overflow:hidden;">
-        <img src="images/ardalanish2.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" alt="Ardalanish Bay linocut print">
+        <img id="hero-main-img" src="images/ardalanish2.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" alt="Ardalanish Bay linocut print">
         <div class="hero-float-card">
-          <p class="float-label">Limited Edition</p>
-          <p class="float-title">Ardalanish · A3</p>
-          <p class="float-price">£150 · Linocut Reduction</p>
+          <p class="float-label" id="hero-bubble-label">Limited Edition</p>
+          <p class="float-title" id="hero-bubble-title">Ardalanish · A3</p>
+          <p class="float-price" id="hero-bubble-price">£150 · Linocut Reduction</p>
         </div>
       </div>
     </div>
@@ -1247,8 +1247,8 @@ footer {
   <!-- Eden's Story -->
   <section class="eden-section">
     <div class="eden-img" style="background:#1a2744; position:relative; overflow:hidden;">
-      <img src="https://lh3.googleusercontent.com/d/1XP7zCWDBrLWg_vypMfppPnJrKr5oVHei" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="Eden Reeve printmaker">
-      <span class="eden-img-cap" style="position:relative;z-index:2;">Eden Reeve · Printmaker</span>
+      <img id="home-artist-img" src="https://lh3.googleusercontent.com/d/1XP7zCWDBrLWg_vypMfppPnJrKr5oVHei" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="Eden Reeve printmaker">
+      <span id="home-artist-caption" class="eden-img-cap" style="position:relative;z-index:2;">Eden Reeve · Printmaker</span>
     </div>
     <div class="eden-content reveal">
       <p class="section-label">The Artist</p>
@@ -1277,7 +1277,7 @@ footer {
       </div>
       <a href="#" class="view-all" onclick="showPage('shop')">View all prints</a>
     </div>
-    <div class="prints-grid">
+    <div class="prints-grid" id="home-prints-grid">
       <div class="print-card tall reveal" onclick="showPage('product','burrow')">
         <img src="images/burrow1.jpg" class="print-thumb" style="min-height:540px; width:100%; display:block; object-fit:cover;" alt="Burrow linocut print">
         <div class="print-overlay">
@@ -1358,7 +1358,7 @@ footer {
       <p class="cards-price">From £3.50 · Bundles from £12</p>
       <a href="#" class="btn-light" onclick="showPage('shop')">Shop Cards & Bundles</a>
     </div>
-    <div class="cards-mosaic reveal d1">
+    <div class="cards-mosaic reveal d1" id="home-cards-mosaic">
       <div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;" onclick="showPage('product','card-celebration-puffin')">
         <img src="https://lh3.googleusercontent.com/d/1z89bnOJXJ2V1ocsGfzz0yoIBqa6uXGyQ" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="Celebration Puffin card">
         <div class="card-tile-info"><p class="card-tile-name">Celebration Puffin</p><p class="card-tile-price">£3.50</p></div>
@@ -1543,8 +1543,8 @@ footer {
 <div class="page" id="page-about">
   <section class="about-hero">
     <div class="about-hero-img" style="background:#1a2744; padding:0; overflow:hidden; position:relative;">
-      <img src="images/eden3.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="Eden Reeve on Mull">
-      <span class="eden-img-cap" style="position:relative;z-index:2;">Eden on Loch Beg</span>
+      <img id="about-artist-img" src="images/eden3.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" alt="Eden Reeve on Mull">
+      <span id="about-artist-caption" class="eden-img-cap" style="position:relative;z-index:2;">Eden on Loch Beg</span>
     </div>
     <div class="about-hero-content reveal">
       <p class="section-label">The Artist</p>
@@ -1572,7 +1572,10 @@ footer {
   </section>
 
   <section class="about-mull">
-    <img src="https://lh3.googleusercontent.com/d/12R7N47_G2pm8Yw6rqf1NWqaEY8WPk5Rg" class="mull-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Walking Ben More on Mull">
+    <div style="position:relative;display:inline-block;width:100%;">
+      <img id="about-island-img" src="https://lh3.googleusercontent.com/d/12R7N47_G2pm8Yw6rqf1NWqaEY8WPk5Rg" class="mull-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Walking Ben More on Mull">
+      <div id="about-island-bubble" style="position:absolute;bottom:1rem;left:1rem;background:rgba(26,39,68,0.82);color:#f5f0e8;padding:0.6rem 1rem;border-radius:0.5rem;font-size:0.82rem;font-style:italic;display:none;"></div>
+    </div>
     <div class="mull-content reveal d1">
       <p class="section-label">The Island</p>
       <h2 class="mull-h2">Life at the edge<br>of the <em>Hebrides</em></h2>
@@ -1588,7 +1591,7 @@ footer {
         <h2 class="section-h2">Galleries & <em>Stockists</em></h2>
       </div>
     </div>
-    <div class="stockists-list">
+    <div class="stockists-list" id="about-stockists-list">
       <div class="stockist-card reveal"><p class="stockist-name">Calgary Gallery</p><p class="stockist-loc">Isle of Mull</p></div>
       <div class="stockist-card reveal d1"><p class="stockist-name">Island Crafts</p><p class="stockist-loc">Tobermory, Mull</p></div>
       <div class="stockist-card reveal d2"><p class="stockist-name">Iona Craft Shop</p><p class="stockist-loc">Isle of Iona</p></div>
@@ -1634,13 +1637,13 @@ footer {
       </div>
     </div>
     <div class="process-hero-img-wrap reveal d1" style="overflow:hidden; border-radius:1rem;">
-      <img src="https://lh3.googleusercontent.com/d/1n_dEfgV7Wvm2rMHGGolkHCBZQOqCckck" style="width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;" alt="Printing press in studio">
+      <img id="process-making-img" src="https://lh3.googleusercontent.com/d/1n_dEfgV7Wvm2rMHGGolkHCBZQOqCckck" style="width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;" alt="Printing press in studio">
     </div>
   </section>
 
   <section class="process-steps-full">
     <div class="process-step-row">
-      <img src="https://lh3.googleusercontent.com/d/1mKKXXgQDUAbH_BkfLDIo_l2MuA4dLQuz" class="step-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Walking on Mull">
+      <img id="process-step1-img" src="https://lh3.googleusercontent.com/d/1mKKXXgQDUAbH_BkfLDIo_l2MuA4dLQuz" class="step-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Walking on Mull">
       <div class="step-content reveal d1">
         <p class="step-big-num">01</p>
         <h2 class="step-content-title">Explore &<br><em>observe</em></h2>
@@ -1649,7 +1652,7 @@ footer {
     </div>
 
     <div class="process-step-row flip">
-      <img src="https://lh3.googleusercontent.com/d/1Og8IXffdrFHSVPDiaqLn1GlPW_TdbWFI" class="step-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Drawing and sketching">
+      <img id="process-step2-img" src="https://lh3.googleusercontent.com/d/1Og8IXffdrFHSVPDiaqLn1GlPW_TdbWFI" class="step-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Drawing and sketching">
       <div class="step-content reveal d1">
         <p class="step-big-num">02</p>
         <h2 class="step-content-title">Draw &<br><em>carve</em></h2>
@@ -1658,7 +1661,7 @@ footer {
     </div>
 
     <div class="process-step-row">
-      <img src="https://lh3.googleusercontent.com/d/1n_dEfgV7Wvm2rMHGGolkHCBZQOqCckck" class="step-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Printing press">
+      <img id="process-step3-img" src="https://lh3.googleusercontent.com/d/1n_dEfgV7Wvm2rMHGGolkHCBZQOqCckck" class="step-img reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Printing press">
       <div class="step-content reveal d1">
         <p class="step-big-num">03</p>
         <h2 class="step-content-title">Ink &<br><em>pull</em></h2>
@@ -1667,7 +1670,7 @@ footer {
     </div>
 
     <div class="process-step-row flip">
-      <img src="https://lh3.googleusercontent.com/d/1cwUEC3A2OPAbuq1iQ52DVj3qJS6nja50" class="step-img c-calgary reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Framed Calgary print">
+      <img id="process-step4-img" src="https://lh3.googleusercontent.com/d/1cwUEC3A2OPAbuq1iQ52DVj3qJS6nja50" class="step-img c-calgary reveal" style="border-radius:1rem;width:100%;object-fit:cover;aspect-ratio:4/3;display:block;" alt="Framed Calgary print">
       <div class="step-content reveal d1">
         <p class="step-big-num">04</p>
         <h2 class="step-content-title">A true<br><em>original</em></h2>
@@ -1883,39 +1886,48 @@ footer {
       </div>
     </div>
     <div class="admin-content">
-      <div class="admin-header">
-        <h1 class="admin-h1">Product Manager</h1>
-        <div style="display:flex;gap:0.75rem;align-items:center;">
-          <button class="admin-reset-link" onclick="adminResetDefaults()">Reset to defaults</button>
-          <button class="admin-btn-primary" onclick="adminToggleAddForm()">+ Add Product</button>
+      <div class="admin-tabs" style="display:flex;gap:0;margin-bottom:2rem;border-bottom:2px solid var(--border);">
+        <button class="admin-tab active" id="tab-products" onclick="switchAdminTab('products')" style="padding:0.65rem 1.4rem;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid var(--ink);margin-bottom:-2px;cursor:pointer;color:var(--ink);">Products</button>
+        <button class="admin-tab" id="tab-content" onclick="switchAdminTab('content')" style="padding:0.65rem 1.4rem;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;color:var(--ink);opacity:0.45;">Site Content</button>
+      </div>
+      <div id="admin-tab-products">
+        <div class="admin-header">
+          <h1 class="admin-h1">Product Manager</h1>
+          <div style="display:flex;gap:0.75rem;align-items:center;">
+            <button class="admin-reset-link" onclick="adminResetDefaults()">Reset to defaults</button>
+            <button class="admin-btn-primary" onclick="adminToggleAddForm()">+ Add Product</button>
+          </div>
+        </div>
+        <div id="admin-add-form" style="display:none;" class="admin-add-form"></div>
+        <div class="admin-section">
+          <h2 class="admin-section-title">Original Prints</h2>
+          <div id="admin-prints-list" class="admin-list"></div>
+        </div>
+        <div class="admin-section">
+          <h2 class="admin-section-title">Greeting Cards</h2>
+          <div id="admin-cards-list" class="admin-list"></div>
+        </div>
+        <div class="admin-section" id="admin-xmas-section" style="display:none;">
+          <h2 class="admin-section-title">Christmas Cards</h2>
+          <div id="admin-xmas-list" class="admin-list"></div>
+        </div>
+        <div class="admin-section" id="admin-bundles-section" style="display:none;">
+          <h2 class="admin-section-title">Bundles</h2>
+          <div id="admin-bundles-list" class="admin-list"></div>
+        </div>
+        <div id="admin-custom-cats-products"></div>
+        <div class="admin-section" id="admin-cats-section">
+          <h2 class="admin-section-title">Manage Categories</h2>
+          <p style="font-size:0.85rem;color:var(--ink);opacity:0.55;margin-bottom:1.25rem;">The built-in categories (Original Print, Greeting Card, Christmas Card, Bundle) are always available. Add extra ones here — they only appear on the shop page once they have products in them.</p>
+          <div id="admin-cats-list" class="admin-list"></div>
+          <div style="display:flex;gap:0.75rem;margin-top:1rem;align-items:center;flex-wrap:wrap;">
+            <input class="admin-input" id="new-cat-label" placeholder="e.g. Slate Prints" style="max-width:220px;">
+            <button class="admin-btn-primary" onclick="adminAddCategory()">+ Add Category</button>
+          </div>
         </div>
       </div>
-      <div id="admin-add-form" style="display:none;" class="admin-add-form"></div>
-      <div class="admin-section">
-        <h2 class="admin-section-title">Original Prints</h2>
-        <div id="admin-prints-list" class="admin-list"></div>
-      </div>
-      <div class="admin-section">
-        <h2 class="admin-section-title">Greeting Cards</h2>
-        <div id="admin-cards-list" class="admin-list"></div>
-      </div>
-      <div class="admin-section" id="admin-xmas-section" style="display:none;">
-        <h2 class="admin-section-title">Christmas Cards</h2>
-        <div id="admin-xmas-list" class="admin-list"></div>
-      </div>
-      <div class="admin-section" id="admin-bundles-section" style="display:none;">
-        <h2 class="admin-section-title">Bundles</h2>
-        <div id="admin-bundles-list" class="admin-list"></div>
-      </div>
-      <div id="admin-custom-cats-products"></div>
-      <div class="admin-section" id="admin-cats-section">
-        <h2 class="admin-section-title">Manage Categories</h2>
-        <p style="font-size:0.85rem;color:var(--ink);opacity:0.55;margin-bottom:1.25rem;">The built-in categories (Original Print, Greeting Card, Christmas Card, Bundle) are always available. Add extra ones here — they only appear on the shop page once they have products in them.</p>
-        <div id="admin-cats-list" class="admin-list"></div>
-        <div style="display:flex;gap:0.75rem;margin-top:1rem;align-items:center;flex-wrap:wrap;">
-          <input class="admin-input" id="new-cat-label" placeholder="e.g. Slate Prints" style="max-width:220px;">
-          <button class="admin-btn-primary" onclick="adminAddCategory()">+ Add Category</button>
-        </div>
+      <div id="admin-tab-content" style="display:none;">
+        <div id="admin-site-content-wrap"></div>
       </div>
     </div>
   </div>
@@ -2246,6 +2258,134 @@ let activeProducts = (() => {
 
 // Staging copy , all admin edits go here; only committed on Save & Exit
 let adminDraftProducts = {};
+
+// ─── Site Content (editable via admin) ───────────────────────────────────────
+const SITE_CONTENT_VERSION = 1;
+const SITE_CONTENT_DEFAULTS = {
+  heroImage:        'images/ardalanish2.jpg',
+  heroBubbleLabel:  'Limited Edition',
+  heroBubbleTitle:  'Ardalanish · A3',
+  heroBubblePrice:  '£150 · Linocut Reduction',
+  homeArtistImage:   'https://lh3.googleusercontent.com/d/1XP7zCWDBrLWg_vypMfppPnJrKr5oVHei',
+  homeArtistCaption: 'Eden Reeve · Printmaker',
+  featuredPrintIds: ['burrow','calgary','hebridean-dreams','spring-on-iona','tangled'],
+  featuredCardIds:  ['card-celebration-puffin','card-sunset-puffins','card-ardalanish','card-treshnish-puffins'],
+  aboutArtistImage:   'images/eden3.jpg',
+  aboutArtistCaption: 'Eden on Loch Beg',
+  islandImage:      'https://lh3.googleusercontent.com/d/12R7N47_G2pm8Yw6rqf1NWqaEY8WPk5Rg',
+  islandBubble:     '',
+  stockists: [
+    { name: 'Calgary Gallery',  location: 'Isle of Mull' },
+    { name: 'Island Crafts',    location: 'Tobermory, Mull' },
+    { name: 'Iona Craft Shop',  location: 'Isle of Iona' },
+    { name: 'Red Door Gallery', location: 'Isle of Mull' },
+    { name: 'The Gift Horse',   location: 'Isle of Mull' },
+    { name: 'Loch And Loaf',    location: 'Isle of Mull' },
+  ],
+  makingImage: 'https://lh3.googleusercontent.com/d/1n_dEfgV7Wvm2rMHGGolkHCBZQOqCckck',
+  step1Image:  'https://lh3.googleusercontent.com/d/1mKKXXgQDUAbH_BkfLDIo_l2MuA4dLQuz',
+  step2Image:  'https://lh3.googleusercontent.com/d/1Og8IXffdrFHSVPDiaqLn1GlPW_TdbWFI',
+  step3Image:  'https://lh3.googleusercontent.com/d/1n_dEfgV7Wvm2rMHGGolkHCBZQOqCckck',
+  step4Image:  'https://lh3.googleusercontent.com/d/1cwUEC3A2OPAbuq1iQ52DVj3qJS6nja50',
+};
+
+let activeSiteContent = (() => {
+  try {
+    const saved = localStorage.getItem('isle_ink_site_content');
+    const savedVer = parseInt(localStorage.getItem('isle_ink_site_content_version') || '0');
+    if (saved && savedVer === SITE_CONTENT_VERSION) return JSON.parse(saved);
+  } catch(e) {}
+  return JSON.parse(JSON.stringify(SITE_CONTENT_DEFAULTS));
+})();
+
+function saveSiteContentToStorage() {
+  localStorage.setItem('isle_ink_site_content', JSON.stringify(activeSiteContent));
+  localStorage.setItem('isle_ink_site_content_version', String(SITE_CONTENT_VERSION));
+}
+
+function applySiteContent() {
+  const sc = activeSiteContent;
+  // Hero
+  const heroImg = document.getElementById('hero-main-img');
+  if (heroImg) heroImg.src = sc.heroImage;
+  const hbl = document.getElementById('hero-bubble-label');
+  if (hbl) hbl.textContent = sc.heroBubbleLabel;
+  const hbt = document.getElementById('hero-bubble-title');
+  if (hbt) hbt.textContent = sc.heroBubbleTitle;
+  const hbp = document.getElementById('hero-bubble-price');
+  if (hbp) hbp.textContent = sc.heroBubblePrice;
+  // Home artist
+  const hai = document.getElementById('home-artist-img');
+  if (hai) hai.src = sc.homeArtistImage;
+  const hac = document.getElementById('home-artist-caption');
+  if (hac) hac.textContent = sc.homeArtistCaption;
+  // About artist
+  const aai = document.getElementById('about-artist-img');
+  if (aai) aai.src = sc.aboutArtistImage;
+  const aac = document.getElementById('about-artist-caption');
+  if (aac) aac.textContent = sc.aboutArtistCaption;
+  // Island
+  const islandImg = document.getElementById('about-island-img');
+  if (islandImg) islandImg.src = sc.islandImage;
+  const islandBubble = document.getElementById('about-island-bubble');
+  if (islandBubble) {
+    islandBubble.textContent = sc.islandBubble;
+    islandBubble.style.display = sc.islandBubble ? 'block' : 'none';
+  }
+  // Process images
+  const imgs = { 'process-making-img': sc.makingImage, 'process-step1-img': sc.step1Image, 'process-step2-img': sc.step2Image, 'process-step3-img': sc.step3Image, 'process-step4-img': sc.step4Image };
+  Object.entries(imgs).forEach(([id, src]) => { const el = document.getElementById(id); if (el) el.src = src; });
+  // Dynamic renders
+  renderHomePrints();
+  renderHomeCards();
+  renderStockists();
+}
+
+function renderHomePrints() {
+  const grid = document.getElementById('home-prints-grid');
+  if (!grid) return;
+  const delays = ['','d1','d2','d3','d4'];
+  const ids = activeSiteContent.featuredPrintIds || [];
+  grid.innerHTML = ids.map((pid, i) => {
+    const p = activeProducts[pid];
+    if (!p) return '';
+    const isFirst = i === 0;
+    const style = isFirst ? 'min-height:540px;width:100%;display:block;object-fit:cover;' : 'aspect-ratio:4/3;width:100%;display:block;object-fit:cover;';
+    const edText = p.eyebrow || 'Open Ed.';
+    return `<div class="print-card ${isFirst ? 'tall ' : ''}reveal ${delays[i]}" onclick="showPage('product','${pid}')">
+      <img src="${p.images[0]}" class="print-thumb" style="${style}" alt="${p.name}">
+      <div class="print-overlay">
+        <p class="print-name">${p.name}</p>
+        <div class="print-meta"><span class="print-ed">${edText}</span><span class="print-price">£${p.price}</span></div>
+      </div>
+    </div>`;
+  }).join('');
+  setTimeout(() => observeReveals(), 100);
+}
+
+function renderHomeCards() {
+  const mosaic = document.getElementById('home-cards-mosaic');
+  if (!mosaic) return;
+  const ids = activeSiteContent.featuredCardIds || [];
+  mosaic.innerHTML = ids.map(pid => {
+    const p = activeProducts[pid];
+    if (!p) return '';
+    return `<div class="card-tile" style="overflow:hidden;border-radius:.75rem;aspect-ratio:3/4;position:relative;cursor:pointer;" onclick="showPage('product','${pid}')">
+      <img src="${p.images[0]}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" alt="${p.name}">
+      <div class="card-tile-info"><p class="card-tile-name">${p.name}</p><p class="card-tile-price">£${p.price}</p></div>
+    </div>`;
+  }).join('');
+}
+
+function renderStockists() {
+  const list = document.getElementById('about-stockists-list');
+  if (!list) return;
+  const delays = ['','d1','d2','d3','d4','d4'];
+  list.innerHTML = (activeSiteContent.stockists || []).map((s, i) =>
+    `<div class="stockist-card reveal ${delays[i]}"><p class="stockist-name">${s.name}</p><p class="stockist-loc">${s.location}</p></div>`
+  ).join('');
+  setTimeout(() => observeReveals(), 100);
+}
 
 // ─── Render shop grids dynamically ───────────────────────────────────────────
 function renderShop() {
@@ -2902,6 +3042,168 @@ document.querySelectorAll('.qty-btn').forEach(btn => {
   });
 });
 
+// ─── Admin Site Content tab ──────────────────────────────────────────────────
+function switchAdminTab(tab) {
+  document.getElementById('admin-tab-products').style.display = tab === 'products' ? '' : 'none';
+  document.getElementById('admin-tab-content').style.display  = tab === 'content'  ? '' : 'none';
+  document.getElementById('tab-products').style.opacity = tab === 'products' ? '1' : '0.45';
+  document.getElementById('tab-products').style.borderBottomColor = tab === 'products' ? 'var(--ink)' : 'transparent';
+  document.getElementById('tab-content').style.opacity  = tab === 'content'  ? '1' : '0.45';
+  document.getElementById('tab-content').style.borderBottomColor  = tab === 'content'  ? 'var(--ink)' : 'transparent';
+  if (tab === 'content') renderSiteContentAdmin();
+}
+
+function renderSiteContentAdmin() {
+  const sc = activeSiteContent;
+  // Build print dropdowns
+  const printOpts = Object.entries(activeProducts).filter(([,p]) => p.category === 'print')
+    .map(([id,p]) => `<option value="${id}">${p.name}</option>`).join('');
+  const cardOpts  = Object.entries(activeProducts).filter(([,p]) => p.category === 'card' || p.category === 'christmas-card')
+    .map(([id,p]) => `<option value="${id}">${p.name}</option>`).join('');
+
+  function printSel(i) {
+    const val = (sc.featuredPrintIds||[])[i] || '';
+    return `<select class="admin-input" id="sc-print-${i}">${printOpts.replace(`value="${val}"`, `value="${val}" selected`)}</select>`;
+  }
+  function cardSel(i) {
+    const val = (sc.featuredCardIds||[])[i] || '';
+    return `<select class="admin-input" id="sc-card-${i}">${cardOpts.replace(`value="${val}"`, `value="${val}" selected`)}</select>`;
+  }
+
+  const stockistRows = (sc.stockists||[]).map((s,i) =>
+    `<div class="admin-list-row" id="sc-stockist-row-${i}" style="display:flex;align-items:center;gap:1rem;padding:0.75rem;background:var(--warm-white);border-radius:0.5rem;margin-bottom:0.5rem;">
+      <span style="flex:1;font-weight:600;font-size:0.9rem;">${s.name}</span>
+      <span style="opacity:0.55;font-size:0.85rem;">${s.location}</span>
+      <button class="admin-btn-ghost" style="color:#c4621a;border-color:#c4621a;padding:0.3rem 0.7rem;font-size:0.75rem;" onclick="scDeleteStockist(${i})">Remove</button>
+    </div>`
+  ).join('');
+
+  document.getElementById('admin-site-content-wrap').innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:3rem;padding-bottom:4rem;">
+
+      <!-- HOME -->
+      <div class="admin-section">
+        <h2 class="admin-section-title">Home Page</h2>
+
+        <h3 style="font-size:0.95rem;font-weight:600;margin:0 0 1rem;color:var(--ink);">Hero Image & Bubble</h3>
+        <div class="admin-form-grid" style="margin-bottom:2rem;">
+          <label class="admin-label" style="grid-column:1/-1;">Hero Image URL or path<input class="admin-input" id="sc-heroImage" value="${sc.heroImage}" placeholder="images/ardalanish2.jpg"></label>
+          <label class="admin-label">Bubble label (e.g. Limited Edition)<input class="admin-input" id="sc-heroBubbleLabel" value="${sc.heroBubbleLabel}"></label>
+          <label class="admin-label">Bubble title (e.g. Ardalanish · A3)<input class="admin-input" id="sc-heroBubbleTitle" value="${sc.heroBubbleTitle}"></label>
+          <label class="admin-label" style="grid-column:1/-1;">Bubble price line (e.g. £150 · Linocut Reduction)<input class="admin-input" id="sc-heroBubblePrice" value="${sc.heroBubblePrice}"></label>
+        </div>
+
+        <h3 style="font-size:0.95rem;font-weight:600;margin:0 0 1rem;color:var(--ink);">Artist Section Image</h3>
+        <div class="admin-form-grid" style="margin-bottom:2rem;">
+          <label class="admin-label" style="grid-column:1/-1;">Image URL or path<input class="admin-input" id="sc-homeArtistImage" value="${sc.homeArtistImage}"></label>
+          <label class="admin-label" style="grid-column:1/-1;">Caption (e.g. Eden Reeve · Printmaker)<input class="admin-input" id="sc-homeArtistCaption" value="${sc.homeArtistCaption}"></label>
+        </div>
+
+        <h3 style="font-size:0.95rem;font-weight:600;margin:0 0 1rem;color:var(--ink);">Featured Prints (5 slots)</h3>
+        <div class="admin-form-grid" style="margin-bottom:2rem;">
+          <label class="admin-label">Slot 1 (large left card)${printSel(0)}</label>
+          <label class="admin-label">Slot 2${printSel(1)}</label>
+          <label class="admin-label">Slot 3${printSel(2)}</label>
+          <label class="admin-label">Slot 4${printSel(3)}</label>
+          <label class="admin-label">Slot 5${printSel(4)}</label>
+        </div>
+
+        <h3 style="font-size:0.95rem;font-weight:600;margin:0 0 1rem;color:var(--ink);">Featured Cards (4 slots)</h3>
+        <div class="admin-form-grid" style="margin-bottom:1rem;">
+          <label class="admin-label">Card 1${cardSel(0)}</label>
+          <label class="admin-label">Card 2${cardSel(1)}</label>
+          <label class="admin-label">Card 3${cardSel(2)}</label>
+          <label class="admin-label">Card 4${cardSel(3)}</label>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="admin-section">
+        <h2 class="admin-section-title">About Page</h2>
+
+        <h3 style="font-size:0.95rem;font-weight:600;margin:0 0 1rem;color:var(--ink);">Artist Image</h3>
+        <div class="admin-form-grid" style="margin-bottom:2rem;">
+          <label class="admin-label" style="grid-column:1/-1;">Image URL or path<input class="admin-input" id="sc-aboutArtistImage" value="${sc.aboutArtistImage}"></label>
+          <label class="admin-label" style="grid-column:1/-1;">Caption<input class="admin-input" id="sc-aboutArtistCaption" value="${sc.aboutArtistCaption}"></label>
+        </div>
+
+        <h3 style="font-size:0.95rem;font-weight:600;margin:0 0 1rem;color:var(--ink);">The Island Image</h3>
+        <div class="admin-form-grid" style="margin-bottom:2rem;">
+          <label class="admin-label" style="grid-column:1/-1;">Image URL or path<input class="admin-input" id="sc-islandImage" value="${sc.islandImage}"></label>
+          <label class="admin-label" style="grid-column:1/-1;">Bubble text (optional, leave blank to hide)<input class="admin-input" id="sc-islandBubble" value="${sc.islandBubble}" placeholder="e.g. Ben More, Isle of Mull"></label>
+        </div>
+
+        <h3 style="font-size:0.95rem;font-weight:600;margin:0 0 1rem;color:var(--ink);">Stockists</h3>
+        <div id="sc-stockists-list" style="margin-bottom:1rem;">${stockistRows}</div>
+        <div class="admin-form-grid" style="background:var(--warm-white);padding:1rem;border-radius:0.75rem;border:1px dashed var(--border);">
+          <label class="admin-label">Stockist name<input class="admin-input" id="sc-new-stockist-name" placeholder="e.g. An Tobar Gallery"></label>
+          <label class="admin-label">Location<input class="admin-input" id="sc-new-stockist-loc" placeholder="e.g. Tobermory, Mull"></label>
+          <div style="grid-column:1/-1;">
+            <button class="admin-btn-primary" onclick="scAddStockist()">Add Stockist</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROCESS -->
+      <div class="admin-section">
+        <h2 class="admin-section-title">Process Page</h2>
+        <div class="admin-form-grid">
+          <label class="admin-label" style="grid-column:1/-1;">"The Making" hero image URL<input class="admin-input" id="sc-makingImage" value="${sc.makingImage}"></label>
+          <label class="admin-label">Step 1 image URL<input class="admin-input" id="sc-step1Image" value="${sc.step1Image}"></label>
+          <label class="admin-label">Step 2 image URL<input class="admin-input" id="sc-step2Image" value="${sc.step2Image}"></label>
+          <label class="admin-label">Step 3 image URL<input class="admin-input" id="sc-step3Image" value="${sc.step3Image}"></label>
+          <label class="admin-label">Step 4 image URL<input class="admin-input" id="sc-step4Image" value="${sc.step4Image}"></label>
+        </div>
+      </div>
+
+      <div>
+        <button class="admin-btn-primary" style="padding:0.85rem 2rem;font-size:0.95rem;" onclick="scSaveAll()">Save Site Content</button>
+      </div>
+    </div>`;
+}
+
+function scSaveAll() {
+  const sc = activeSiteContent;
+  sc.heroImage         = document.getElementById('sc-heroImage').value.trim();
+  sc.heroBubbleLabel   = document.getElementById('sc-heroBubbleLabel').value.trim();
+  sc.heroBubbleTitle   = document.getElementById('sc-heroBubbleTitle').value.trim();
+  sc.heroBubblePrice   = document.getElementById('sc-heroBubblePrice').value.trim();
+  sc.homeArtistImage   = document.getElementById('sc-homeArtistImage').value.trim();
+  sc.homeArtistCaption = document.getElementById('sc-homeArtistCaption').value.trim();
+  sc.featuredPrintIds  = [0,1,2,3,4].map(i => document.getElementById('sc-print-'+i)?.value).filter(Boolean);
+  sc.featuredCardIds   = [0,1,2,3].map(i => document.getElementById('sc-card-'+i)?.value).filter(Boolean);
+  sc.aboutArtistImage   = document.getElementById('sc-aboutArtistImage').value.trim();
+  sc.aboutArtistCaption = document.getElementById('sc-aboutArtistCaption').value.trim();
+  sc.islandImage  = document.getElementById('sc-islandImage').value.trim();
+  sc.islandBubble = document.getElementById('sc-islandBubble').value.trim();
+  sc.makingImage  = document.getElementById('sc-makingImage').value.trim();
+  sc.step1Image   = document.getElementById('sc-step1Image').value.trim();
+  sc.step2Image   = document.getElementById('sc-step2Image').value.trim();
+  sc.step3Image   = document.getElementById('sc-step3Image').value.trim();
+  sc.step4Image   = document.getElementById('sc-step4Image').value.trim();
+  saveSiteContentToStorage();
+  applySiteContent();
+  alert('Site content saved!');
+}
+
+function scDeleteStockist(i) {
+  if (!confirm('Remove this stockist?')) return;
+  activeSiteContent.stockists.splice(i, 1);
+  saveSiteContentToStorage();
+  renderSiteContentAdmin();
+  renderStockists();
+}
+
+function scAddStockist() {
+  const name = document.getElementById('sc-new-stockist-name').value.trim();
+  const loc  = document.getElementById('sc-new-stockist-loc').value.trim();
+  if (!name) { alert('Please enter a stockist name.'); return; }
+  activeSiteContent.stockists.push({ name, location: loc });
+  saveSiteContentToStorage();
+  renderSiteContentAdmin();
+  renderStockists();
+}
+
 // ─── Mailchimp newsletter signup ─────────────────────────────────────────────
 // Paste your Mailchimp form URL here (from Audience > Signup forms > Embedded forms)
 const MAILCHIMP_URL = 'https://isleandink.us22.list-manage.com/subscribe/post?u=807c4541d38eb2eb8c6adb593&id=3d683a8a12&f_id=008ac2e1f0';
@@ -2940,6 +3242,7 @@ function mailchimpSignup(form) {
 // Initial shop render + reveals
 renderShop();
 observeReveals();
+applySiteContent();
 
 // ─── Contact form (Formspree) ─────────────────────────────────────────────────
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
