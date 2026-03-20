@@ -1504,7 +1504,7 @@ footer {
             data-item-id="calgary"
             data-item-name="Calgary"
             data-item-price="120"
-            data-item-url="https://isle-and-ink.netlify.app/"
+            data-item-url="https://isle-and-ink.netlify.app/.netlify/functions/validate-product?id=calgary"
             data-item-description="Linocut Reduction · Limited Edition of 15 · A3"
             data-item-image="https://lh3.googleusercontent.com/d/1OQvcJ3IJIG_FM-9m8hGBQov3Zeg_2Dz9"
             data-item-max-quantity="15"
@@ -2617,7 +2617,7 @@ let activeProducts = (() => {
     btn.dataset.itemId = id;
     btn.dataset.itemName = p.name;
     btn.dataset.itemPrice = p.price;
-    btn.dataset.itemUrl = 'https://isle-and-ink.netlify.app/';
+    btn.dataset.itemUrl = ITEM_URL(id);
     btn.dataset.itemDescription = p.eyebrow || '';
     btn.dataset.itemImage = p.images[0] || '';
     container.appendChild(btn);
