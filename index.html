@@ -1941,304 +1941,642 @@ footer {
 // ─── Product catalogue (defaults) ────────────────────────────────────────────
 // <<PRODUCTS_START>>
 const PRODUCTS = {
-  'ardalanish': {
-    name: 'Ardalanish',
-    eyebrow: 'Limited Edition · Isle of Mull',
-    price: 120,
-    desc: "A linocut reduction print of Ardalanish Bay, one of Mull's most remote and beautiful beaches.",
-    specs: [
-      { key: 'Edition',    val: 'Limited Edition' },
-      { key: 'Print type', val: 'Linocut Reduction' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "ardalanish": {
+    "name": "Ardalanish",
+    "eyebrow": "Limited Edition · Isle of Mull",
+    "price": 120,
+    "desc": "A linocut reduction print of Ardalanish Bay, one of Mull's most remote and beautiful beaches.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Limited Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut Reduction"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/ardalanish.jpg'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/ardalanish.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'afternoon-nap': {
-    name: 'Afternoon Nap',
-    eyebrow: 'Open Edition · Isle of Mull',
-    price: 48,
-    desc: 'A peaceful linocut of an otter dozing on the rocks, a quiet moment on the Mull shoreline.',
-    specs: [
-      { key: 'Edition',    val: 'Open Edition' },
-      { key: 'Print type', val: 'Linocut' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "afternoon-nap": {
+    "name": "Afternoon Nap",
+    "eyebrow": "Open Edition · Isle of Mull",
+    "price": 48,
+    "desc": "A peaceful linocut of an otter dozing on the rocks, a quiet moment on the Mull shoreline.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Open Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/afternoon-nap.png'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/afternoon-nap.png"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'burrow': {
-    name: 'Burrow',
-    eyebrow: 'Open Edition · Isle of Mull',
-    price: 48,
-    desc: 'A linocut print of a puffin peering out from its burrow on the Treshnish Isles.',
-    specs: [
-      { key: 'Edition',    val: 'Open Edition' },
-      { key: 'Print type', val: 'Linocut' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "burrow": {
+    "name": "Burrow",
+    "eyebrow": "Open Edition · Isle of Mull",
+    "price": 48,
+    "desc": "A linocut print of a puffin peering out from its burrow on the Treshnish Isles.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Open Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/burrow.jpg'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/burrow.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'calgary': {
-    name: 'Calgary Bay',
-    eyebrow: 'Limited Edition · Isle of Mull',
-    price: 120,
-    desc: 'A stylised linocut reduction print of Calgary Bay on the Isle of Mull. This piece holds the memory of sea air, shifting tides, and long days in one of my favourite places.',
-    specs: [
-      { key: 'Edition',    val: 'Limited Edition of 15' },
-      { key: 'Print type', val: 'Linocut Reduction' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' },
-      { key: 'Paper size', val: '38 × 50cm' },
-      { key: 'Paper',      val: 'Hosho' },
-      { key: 'Ink',        val: 'Cranfield Caligo' }
+  "calgary": {
+    "name": "Calgary Bay",
+    "eyebrow": "Limited Edition · Isle of Mull",
+    "price": 120,
+    "desc": "A stylised linocut reduction print of Calgary Bay on the Isle of Mull. This piece holds the memory of sea air, shifting tides, and long days in one of my favourite places.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Limited Edition of 15"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut Reduction"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      },
+      {
+        "key": "Paper size",
+        "val": "38 × 50cm"
+      },
+      {
+        "key": "Paper",
+        "val": "Hosho"
+      },
+      {
+        "key": "Ink",
+        "val": "Cranfield Caligo"
+      }
     ],
-    images: ['images/calgary.jpg'],
-    maxQty: 15, showFraming: true, category: 'print'
+    "images": [
+      "images/calgary.jpg"
+    ],
+    "maxQty": 15,
+    "showFraming": true,
+    "category": "print"
   },
-  'hebridean-dreams': {
-    name: 'Hebridean Dreams',
-    eyebrow: 'Open Edition · Isle of Mull',
-    price: 48,
-    desc: 'A dreamy linocut of an otter gliding through the teal waters of the Hebrides.',
-    specs: [
-      { key: 'Edition',    val: 'Open Edition' },
-      { key: 'Print type', val: 'Linocut' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "hebridean-dreams": {
+    "name": "Hebridean Dreams",
+    "eyebrow": "Open Edition · Isle of Mull",
+    "price": 48,
+    "desc": "A dreamy linocut of an otter gliding through the teal waters of the Hebrides.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Open Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/hebridean-dreams.png'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/hebridean-dreams.png"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'nestled': {
-    name: 'Nestled',
-    eyebrow: 'Open Edition · Isle of Mull',
-    price: 48,
-    desc: 'A tender linocut of otters nestled together, a quiet scene from the Mull coastline.',
-    specs: [
-      { key: 'Edition',    val: 'Open Edition' },
-      { key: 'Print type', val: 'Linocut' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "nestled": {
+    "name": "Nestled",
+    "eyebrow": "Open Edition · Isle of Mull",
+    "price": 48,
+    "desc": "A tender linocut of otters nestled together, a quiet scene from the Mull coastline.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Open Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/nestled.jpg'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/nestled.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'spring-on-iona': {
-    name: 'Spring on Iona',
-    eyebrow: 'Limited Edition of 18 · Isle of Iona',
-    price: 120,
-    desc: 'A vibrant linocut reduction print capturing the colours of spring on the Isle of Iona.',
-    specs: [
-      { key: 'Edition',    val: 'Limited Edition of 18' },
-      { key: 'Print type', val: 'Linocut Reduction' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "spring-on-iona": {
+    "name": "Spring on Iona",
+    "eyebrow": "Limited Edition of 18 · Isle of Iona",
+    "price": 120,
+    "desc": "A vibrant linocut reduction print capturing the colours of spring on the Isle of Iona.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Limited Edition of 18"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut Reduction"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/spring-on-iona.png'],
-    maxQty: 18, showFraming: true, category: 'print'
+    "images": [
+      "images/spring-on-iona.png"
+    ],
+    "maxQty": 18,
+    "showFraming": true,
+    "category": "print"
   },
-  'taking-a-dip': {
-    name: 'Taking a Dip',
-    eyebrow: 'Open Edition · Isle of Mull',
-    price: 48,
-    desc: 'A playful linocut of an otter taking a dip in the clear waters around Mull.',
-    specs: [
-      { key: 'Edition',    val: 'Open Edition' },
-      { key: 'Print type', val: 'Linocut' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "taking-a-dip": {
+    "name": "Taking a Dip",
+    "eyebrow": "Open Edition · Isle of Mull",
+    "price": 48,
+    "desc": "A playful linocut of an otter taking a dip in the clear waters around Mull.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Open Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/taking-a-dip.png'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/taking-a-dip.png"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'tangled': {
-    name: 'Tangled',
-    eyebrow: 'Open Edition · Isle of Mull',
-    price: 48,
-    desc: 'A charming linocut of an otter tangled in seaweed, a familiar sight on the shores of Mull.',
-    specs: [
-      { key: 'Edition',    val: 'Open Edition' },
-      { key: 'Print type', val: 'Linocut' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "tangled": {
+    "name": "Tangled",
+    "eyebrow": "Open Edition · Isle of Mull",
+    "price": 48,
+    "desc": "A charming linocut of an otter tangled in seaweed, a familiar sight on the shores of Mull.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Open Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/tangled.jpg'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/tangled.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'windswept': {
-    name: 'Windswept',
-    eyebrow: 'Open Edition · Isle of Mull',
-    price: 48,
-    desc: 'A bold linocut print capturing the wild, windswept character of the Mull coastline.',
-    specs: [
-      { key: 'Edition',    val: 'Open Edition' },
-      { key: 'Print type', val: 'Linocut' },
-      { key: 'Print size', val: 'A3 (297 × 420mm)' }
+  "windswept": {
+    "name": "Windswept",
+    "eyebrow": "Open Edition · Isle of Mull",
+    "price": 48,
+    "desc": "A bold linocut print capturing the wild, windswept character of the Mull coastline.",
+    "specs": [
+      {
+        "key": "Edition",
+        "val": "Open Edition"
+      },
+      {
+        "key": "Print type",
+        "val": "Linocut"
+      },
+      {
+        "key": "Print size",
+        "val": "A3 (297 × 420mm)"
+      }
     ],
-    images: ['images/windswept.jpg'],
-    maxQty: null, showFraming: true, category: 'print'
+    "images": [
+      "images/windswept.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   },
-  'card-sunset-puffins': {
-    name: 'Sunset Puffins',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: 'Two puffins perched on the rocks, bills touching, watching the sun drop behind the Treshnish Isles. All orange sky and golden water. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-sunset-puffins": {
+    "name": "Sunset Puffins",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "Two puffins perched on the rocks, bills touching, watching the sun drop behind the Treshnish Isles. All orange sky and golden water. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/puffin-sunset.jpg'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/puffin-sunset.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-celebration-puffin': {
-    name: 'Celebration Puffin',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: 'A puffin in a party hat, wings out, absolutely living for it. The ideal card for anyone worth celebrating. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-celebration-puffin": {
+    "name": "Celebration Puffin",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "A puffin in a party hat, wings out, absolutely living for it. The ideal card for anyone worth celebrating. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/celebration-puffin.jpg'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/celebration-puffin.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-ardalanish': {
-    name: 'Ardalanish',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: 'Two Hebridean sheep grazing in a wildflower meadow above Ardalanish Beach, with the Paps of Jura sitting low on the horizon. A west coast scene that feels instantly familiar if you know Mull. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-ardalanish": {
+    "name": "Ardalanish",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "Two Hebridean sheep grazing in a wildflower meadow above Ardalanish Beach, with the Paps of Jura sitting low on the horizon. A west coast scene that feels instantly familiar if you know Mull. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/ardalanish-card.jpg'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/ardalanish-card.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-ionas-beach': {
-    name: "Iona's Beach",
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: "The White Strand of the Monk on a clear day, looking out past the dunes and gate to Eilean Annraidh on the horizon. Iona at its quietest. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-ionas-beach": {
+    "name": "Iona's Beach",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "The White Strand of the Monk on a clear day, looking out past the dunes and gate to Eilean Annraidh on the horizon. Iona at its quietest. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/iona-beach.png'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/iona-beach.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-treshnish-puffins': {
-    name: 'Treshnish Isle Puffins',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: "Puffins crowding the clifftops of Lunga on a summer's day, with the Treshnish Isles stretching out behind them. If you've made the boat trip, you'll recognise this immediately. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-treshnish-puffins": {
+    "name": "Treshnish Isle Puffins",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "Puffins crowding the clifftops of Lunga on a summer's day, with the Treshnish Isles stretching out behind them. If you've made the boat trip, you'll recognise this immediately. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/treshnish-puffins.png'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/treshnish-puffins.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-highland-coos': {
-    name: 'Highland Coos',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: 'The Pennyghael coos wading through the still waters of Loch Beg, with Ben More rising behind them. Classic Mull. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-highland-coos": {
+    "name": "Highland Coos",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "The Pennyghael coos wading through the still waters of Loch Beg, with Ben More rising behind them. Classic Mull. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/pennyghael-coos.png'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/pennyghael-coos.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-iona-ruins': {
-    name: 'Iona Ruins',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: "The ruined Bishop's House on Iona, surrounded by grazing sheep and open grass, sea visible beyond. Hundreds of years of history sitting quietly in a field. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-iona-ruins": {
+    "name": "Iona Ruins",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "The ruined Bishop's House on Iona, surrounded by grazing sheep and open grass, sea visible beyond. Hundreds of years of history sitting quietly in a field. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/iona-ruins.png'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/iona-ruins.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-tobermory': {
-    name: 'Tobermory',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: 'The CalMac ferry cutting through the bay, colourful houses lining the harbour front, summer light on the water. Tobermory at its best. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-tobermory": {
+    "name": "Tobermory",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "The CalMac ferry cutting through the bay, colourful houses lining the harbour front, summer light on the water. Tobermory at its best. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/tobermory-card.jpg'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/tobermory-card.jpg"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-iona-abbey': {
-    name: 'Iona Abbey',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: 'Iona Abbey from across the water, with small boats bobbing in the turquoise bay and Dun I rising to the right. Calm and timeless. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-iona-abbey": {
+    "name": "Iona Abbey",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "Iona Abbey from across the water, with small boats bobbing in the turquoise bay and Dun I rising to the right. Calm and timeless. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/iona-abbey-card.png'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/iona-abbey-card.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'card-loch-na-keal': {
-    name: 'Loch Na Keal',
-    eyebrow: 'Greeting Card · Isle of Mull',
-    price: 3.5,
-    desc: 'Otters on the rocks at Loch na Keal, the sun just clearing the horizon and catching the still water. An early morning scene that\'s worth the cold. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.',
-    specs: [
-      { key: 'Size',   val: 'A6' },
-      { key: 'Inside', val: 'Blank' },
-      { key: 'Paper',  val: '350gsm recycled card' },
-      { key: 'Envelope', val: 'Brown recycled' }
+  "card-loch-na-keal": {
+    "name": "Loch Na Keal",
+    "eyebrow": "Greeting Card · Isle of Mull",
+    "price": 3.5,
+    "desc": "Otters on the rocks at Loch na Keal, the sun just clearing the horizon and catching the still water. An early morning scene that's worth the cold. Printed on 350gsm recycled card with organic flecks and fibres, paired with a brown recycled envelope. Blank inside.",
+    "specs": [
+      {
+        "key": "Size",
+        "val": "A6"
+      },
+      {
+        "key": "Inside",
+        "val": "Blank"
+      },
+      {
+        "key": "Paper",
+        "val": "350gsm recycled card"
+      },
+      {
+        "key": "Envelope",
+        "val": "Brown recycled"
+      }
     ],
-    images: ['images/otters-card.png'],
-    maxQty: null, showFraming: false, category: 'card'
+    "images": [
+      "images/otters-card.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "card"
   },
-  'bundle-6-cards': {
-    name: 'Any 6 Cards',
-    eyebrow: 'Bundle · Save £6',
-    price: 12,
-    desc: 'Pick any 6 greeting cards from the collection for just £12, that\'s £2 each. Add to basket and let us know which cards you\'d like in the notes field. Mix and match freely.',
-    specs: [
-      { key: 'Cards included', val: 'Any 6 from the range' },
-      { key: 'Price per card', val: '£2.00 each' },
-      { key: 'Format',         val: 'A6 · Blank inside · Matt finish' }
+  "bundle-6-cards": {
+    "name": "Any 6 Cards",
+    "eyebrow": "Bundle · Save £6",
+    "price": 12,
+    "desc": "Pick any 6 greeting cards from the collection for just £12, that's £2 each. Add to basket and let us know which cards you'd like in the notes field. Mix and match freely.",
+    "specs": [
+      {
+        "key": "Cards included",
+        "val": "Any 6 from the range"
+      },
+      {
+        "key": "Price per card",
+        "val": "£2.00 each"
+      },
+      {
+        "key": "Format",
+        "val": "A6 · Blank inside · Matt finish"
+      }
     ],
-    images: ['images/scotland-greeting-cards.png'],
-    maxQty: null, showFraming: false, category: 'bundle'
+    "images": [
+      "images/scotland-greeting-cards.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "bundle"
   },
-  'bundle-12-cards': {
-    name: 'Any 12 Cards',
-    eyebrow: 'Bundle · Best Value',
-    price: 20,
-    desc: 'Pick any 12 greeting cards from the collection for just £20, that\'s under £1.67 each. Add to basket and let us know which cards you\'d like in the notes field. Mix and match freely.',
-    specs: [
-      { key: 'Cards included', val: 'Any 12 from the range' },
-      { key: 'Price per card', val: '£1.67 each' },
-      { key: 'Format',         val: 'A6 · Blank inside · Matt finish' }
+  "bundle-12-cards": {
+    "name": "Any 12 Cards",
+    "eyebrow": "Bundle · Best Value",
+    "price": 20,
+    "desc": "Pick any 12 greeting cards from the collection for just £20, that's under £1.67 each. Add to basket and let us know which cards you'd like in the notes field. Mix and match freely.",
+    "specs": [
+      {
+        "key": "Cards included",
+        "val": "Any 12 from the range"
+      },
+      {
+        "key": "Price per card",
+        "val": "£1.67 each"
+      },
+      {
+        "key": "Format",
+        "val": "A6 · Blank inside · Matt finish"
+      }
     ],
-    images: ['images/mixed-pack-iona.png'],
-    maxQty: null, showFraming: false, category: 'bundle'
+    "images": [
+      "images/mixed-pack-iona.png"
+    ],
+    "maxQty": null,
+    "showFraming": false,
+    "category": "bundle"
+  },
+  "test": {
+    "name": "Test",
+    "price": 34,
+    "eyebrow": "Open Edition · Isle of Mull",
+    "desc": "",
+    "specs": [],
+    "images": [
+      "images/ardalanish"
+    ],
+    "maxQty": null,
+    "showFraming": true,
+    "category": "print"
   }
 };
 // <<PRODUCTS_END>>
