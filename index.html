@@ -1939,6 +1939,7 @@ footer {
 ══════════════════════════════ -->
 <script>
 // ─── Product catalogue (defaults) ────────────────────────────────────────────
+// <<PRODUCTS_START>>
 const PRODUCTS = {
   'ardalanish': {
     name: 'Ardalanish',
@@ -2240,6 +2241,7 @@ const PRODUCTS = {
     maxQty: null, showFraming: false, category: 'bundle'
   }
 };
+// <<PRODUCTS_END>>
 
 // ─── Active products (localStorage overrides defaults) ───────────────────────
 // Bump this number whenever the default PRODUCTS catalogue changes in code.
@@ -2668,6 +2670,27 @@ function adminCommitChanges() {
   adminMarkUnsaved(false);
   sessionStorage.removeItem('isle_ink_admin');
   adminDraftProducts = {};
+
+  // Push products to GitHub via Netlify Function
+  fetch('/.netlify/functions/save-products', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(activeProducts)
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.success) {
+      alert('Changes saved and site updated! It will be live within 30 seconds.');
+    } else {
+      alert('Changes saved locally but failed to update the live site. Please contact support.');
+      console.error(data);
+    }
+  })
+  .catch(err => {
+    alert('Changes saved locally but failed to update the live site. Please contact support.');
+    console.error(err);
+  });
+
   showPage('shop');
 }
 
