@@ -1,5 +1,3 @@
-const ITEM_URL = 'https://isle-and-ink.netlify.app/';
-
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not allowed' };
@@ -12,11 +10,12 @@ exports.handler = async (event) => {
 
   const repo = 'InkyEden/isle-and-ink-website';
   const filePath = 'index.html';
+  const productsJsonPath = 'netlify/functions/products.json';
 
   try {
     const products = JSON.parse(event.body);
 
-    // Get current file from GitHub
+    // Get current index.html from GitHub
     const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -43,21 +42,7 @@ exports.handler = async (event) => {
       newProductsBlock
     );
 
-    // ── 2. Regenerate Snipcart validation buttons ─────────────────────────────
-    const buttons = Object.entries(products).map(([id, p]) => {
-      const desc = (p.eyebrow || '').replace(/'/g, '&#39;');
-      const name = (p.name || '').replace(/'/g, '&#39;');
-      return `  <button class="snipcart-add-item" data-item-id="${id}" data-item-name="${name}" data-item-price="${p.price}" data-item-url="${ITEM_URL}" data-item-description="${desc}"></button>`;
-    }).join('\n');
-
-    const newValidationBlock = `<!-- <<VALIDATION_START>> -->\n<div style="display:none" aria-hidden="true">\n${buttons}\n</div>\n<!-- <<VALIDATION_END>> -->`;
-
-    currentContent = currentContent.replace(
-      /<!-- <<VALIDATION_START>> -->[\s\S]*?<!-- <<VALIDATION_END>> -->/,
-      newValidationBlock
-    );
-
-    // ── 3. Commit updated file to GitHub ──────────────────────────────────────
+    // ── 2. Commit updated index.html to GitHub ────────────────────────────────
     const updateRes = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
       method: 'PUT',
       headers: {
@@ -76,6 +61,51 @@ exports.handler = async (event) => {
     if (!updateRes.ok) {
       const err = await updateRes.json();
       return { statusCode: 500, body: JSON.stringify(err) };
+    }
+
+    // ── 3. Build slim products.json (id, name, eyebrow, price only) ───────────
+    const slim = {};
+    for (const [id, p] of Object.entries(products)) {
+      slim[id] = { name: p.name, eyebrow: p.eyebrow || '', price: p.price };
+    }
+    const slimJson = JSON.stringify(slim, null, 2);
+
+    // ── 4. Get current products.json SHA from GitHub ──────────────────────────
+    const getPjRes = await fetch(`https://api.github.com/repos/${repo}/contents/${productsJsonPath}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'isle-and-ink-admin'
+      }
+    });
+
+    let pjSha = null;
+    if (getPjRes.ok) {
+      const pjData = await getPjRes.json();
+      pjSha = pjData.sha;
+    }
+
+    // ── 5. Commit updated products.json to GitHub ─────────────────────────────
+    const updatePjBody = {
+      message: 'Update products.json via admin panel',
+      content: Buffer.from(slimJson).toString('base64')
+    };
+    if (pjSha) updatePjBody.sha = pjSha;
+
+    const updatePjRes = await fetch(`https://api.github.com/repos/${repo}/contents/${productsJsonPath}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'isle-and-ink-admin'
+      },
+      body: JSON.stringify(updatePjBody)
+    });
+
+    if (!updatePjRes.ok) {
+      const err = await updatePjRes.json();
+      return { statusCode: 500, body: JSON.stringify({ step: 'products.json', ...err }) };
     }
 
     return {
