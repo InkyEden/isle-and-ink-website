@@ -1504,7 +1504,7 @@ footer {
             data-item-id="calgary"
             data-item-name="Calgary"
             data-item-price="120"
-            data-item-url="https://inkyeden.github.io/isle-and-ink-website/"
+            data-item-url="https://isle-and-ink.netlify.app/"
             data-item-description="Linocut Reduction · Limited Edition of 15 · A3"
             data-item-image="https://lh3.googleusercontent.com/d/1OQvcJ3IJIG_FM-9m8hGBQov3Zeg_2Dz9"
             data-item-max-quantity="15"
@@ -2608,7 +2608,7 @@ let activeProducts = (() => {
     btn.dataset.itemId = id;
     btn.dataset.itemName = p.name;
     btn.dataset.itemPrice = p.price;
-    btn.dataset.itemUrl = 'https://inkyeden.github.io/isle-and-ink-website/';
+    btn.dataset.itemUrl = 'https://isle-and-ink.netlify.app/';
     btn.dataset.itemDescription = p.eyebrow || '';
     btn.dataset.itemImage = p.images[0] || '';
     container.appendChild(btn);
@@ -2749,7 +2749,7 @@ function renderStockists() {
 
 // ─── Render shop grids dynamically ───────────────────────────────────────────
 function renderShop() {
-  const ITEM_URL = 'https://inkyeden.github.io/isle-and-ink-website/';
+  const ITEM_URL = 'https://isle-and-ink.netlify.app/';
   const delays = ['', ' d1', ' d2', ' d3'];
 
   function makePrintCard(id, p, i) {
@@ -3248,7 +3248,7 @@ function loadProduct(id) {
     addBtn.dataset.itemId = id;
     addBtn.dataset.itemName = p.name;
     addBtn.dataset.itemPrice = p.price;
-    addBtn.dataset.itemUrl = 'https://inkyeden.github.io/isle-and-ink-website/';
+    addBtn.dataset.itemUrl = 'https://isle-and-ink.netlify.app/';
     addBtn.dataset.itemImage = p.images[0];
     addBtn.dataset.itemDescription = p.desc.substring(0, 200);
     addBtn.dataset.itemQuantity = '1';
@@ -3668,28 +3668,28 @@ document.getElementById('contact-form').addEventListener('submit', async functio
 
 <!-- Hidden static product data for Snipcart price validation -->
 <div style="display:none" aria-hidden="true">
-  <button class="snipcart-add-item" data-item-id="ardalanish" data-item-name="Ardalanish" data-item-price="120" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Limited Edition · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="afternoon-nap" data-item-name="Afternoon Nap" data-item-price="48" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="4x4 Print · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="burrow" data-item-name="Burrow" data-item-price="48" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="4x4 Print · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="calgary" data-item-name="Calgary" data-item-price="120" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Linocut Reduction · Limited Edition of 15 · A3"></button>
-  <button class="snipcart-add-item" data-item-id="hebridean-dreams" data-item-name="Hebridean Dreams" data-item-price="48" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="4x4 Print · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="nestled" data-item-name="Nestled" data-item-price="48" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="4x4 Print · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="spring-on-iona" data-item-name="Spring on Iona" data-item-price="120" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Limited Edition · Isle of Iona"></button>
-  <button class="snipcart-add-item" data-item-id="taking-a-dip" data-item-name="Taking a Dip" data-item-price="48" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="4x4 Print · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="tangled" data-item-name="Tangled" data-item-price="48" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="4x4 Print · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="windswept" data-item-name="Windswept" data-item-price="48" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="4x4 Print · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-sunset-puffins" data-item-name="Sunset Puffins" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-celebration-puffin" data-item-name="Celebration Puffin" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-ardalanish" data-item-name="Ardalanish" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-ionas-beach" data-item-name="Iona's Beach" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-treshnish-puffins" data-item-name="Treshnish Isle Puffins" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-highland-coos" data-item-name="Highland Coos" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-iona-ruins" data-item-name="Iona Ruins" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-tobermory" data-item-name="Tobermory" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-iona-abbey" data-item-name="Iona Abbey" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="card-loch-na-keal" data-item-name="Loch Na Keal" data-item-price="3.5" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Greeting Card · Isle of Mull"></button>
-  <button class="snipcart-add-item" data-item-id="bundle-6-cards" data-item-name="Any 6 Cards" data-item-price="12" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Bundle · Save £6"></button>
-  <button class="snipcart-add-item" data-item-id="bundle-12-cards" data-item-name="Any 12 Cards" data-item-price="20" data-item-url="https://inkyeden.github.io/isle-and-ink-website/" data-item-description="Bundle · Best Value"></button>
+  <button class="snipcart-add-item" data-item-id="ardalanish" data-item-name="Ardalanish" data-item-price="120" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Limited Edition · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="afternoon-nap" data-item-name="Afternoon Nap" data-item-price="48" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="4x4 Print · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="burrow" data-item-name="Burrow" data-item-price="48" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="4x4 Print · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="calgary" data-item-name="Calgary" data-item-price="120" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Linocut Reduction · Limited Edition of 15 · A3"></button>
+  <button class="snipcart-add-item" data-item-id="hebridean-dreams" data-item-name="Hebridean Dreams" data-item-price="48" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="4x4 Print · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="nestled" data-item-name="Nestled" data-item-price="48" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="4x4 Print · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="spring-on-iona" data-item-name="Spring on Iona" data-item-price="120" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Limited Edition · Isle of Iona"></button>
+  <button class="snipcart-add-item" data-item-id="taking-a-dip" data-item-name="Taking a Dip" data-item-price="48" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="4x4 Print · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="tangled" data-item-name="Tangled" data-item-price="48" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="4x4 Print · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="windswept" data-item-name="Windswept" data-item-price="48" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="4x4 Print · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-sunset-puffins" data-item-name="Sunset Puffins" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-celebration-puffin" data-item-name="Celebration Puffin" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-ardalanish" data-item-name="Ardalanish" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-ionas-beach" data-item-name="Iona's Beach" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-treshnish-puffins" data-item-name="Treshnish Isle Puffins" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-highland-coos" data-item-name="Highland Coos" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-iona-ruins" data-item-name="Iona Ruins" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-tobermory" data-item-name="Tobermory" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-iona-abbey" data-item-name="Iona Abbey" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="card-loch-na-keal" data-item-name="Loch Na Keal" data-item-price="3.5" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Greeting Card · Isle of Mull"></button>
+  <button class="snipcart-add-item" data-item-id="bundle-6-cards" data-item-name="Any 6 Cards" data-item-price="12" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Bundle · Save £6"></button>
+  <button class="snipcart-add-item" data-item-id="bundle-12-cards" data-item-name="Any 12 Cards" data-item-price="20" data-item-url="https://isle-and-ink.netlify.app/" data-item-description="Bundle · Best Value"></button>
 </div>
 </body>
 </html>
