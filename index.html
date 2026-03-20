@@ -2870,7 +2870,7 @@ function renderShop() {
 }
 
 // ─── Admin ────────────────────────────────────────────────────────────────────
-const ADMIN_PASS = 'InkyChicken';
+// Admin password is verified securely via Netlify Function
 
 // ─── Custom categories ────────────────────────────────────────────────────────
 const CUSTOM_CATS_KEY = 'isle_ink_custom_cats';
@@ -2947,21 +2947,34 @@ function adminDeleteCategory(id) {
   renderShop();
 }
 
-function adminLogin() {
+async function adminLogin() {
   const input = document.getElementById('admin-password-input');
   const errEl = document.getElementById('admin-login-error');
-  if (input.value === ADMIN_PASS) {
-    sessionStorage.setItem('isle_ink_admin', '1');
-    input.value = '';
-    errEl.style.display = 'none';
-    // Fresh draft on each login
-    adminDraftProducts = JSON.parse(JSON.stringify(activeProducts));
-    adminMarkUnsaved(false);
-    renderAdminDashboard();
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-admin').classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  } else {
+
+  try {
+    const res = await fetch('/.netlify/functions/verify-password', {
+      method: 'POST',
+      body: JSON.stringify({ password: input.value })
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      sessionStorage.setItem('isle_ink_admin', '1');
+      input.value = '';
+      errEl.style.display = 'none';
+      // Fresh draft on each login
+      adminDraftProducts = JSON.parse(JSON.stringify(activeProducts));
+      adminMarkUnsaved(false);
+      renderAdminDashboard();
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-admin').classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      errEl.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  } catch (e) {
     errEl.style.display = 'block';
     input.value = '';
     input.focus();
