@@ -1,3 +1,5 @@
+const ITEM_URL = 'https://isle-and-ink.netlify.app/';
+
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method not allowed' };
@@ -29,24 +31,33 @@ exports.handler = async (event) => {
     }
 
     const fileData = await getRes.json();
-    const currentContent = Buffer.from(fileData.content, 'base64').toString('utf8');
+    let currentContent = Buffer.from(fileData.content, 'base64').toString('utf8');
     const sha = fileData.sha;
 
-    // Build new PRODUCTS block
+    // ── 1. Update PRODUCTS block ──────────────────────────────────────────────
     const productsJs = JSON.stringify(products, null, 2);
-    const newBlock = `// <<PRODUCTS_START>>\nconst PRODUCTS = ${productsJs};\n// <<PRODUCTS_END>>`;
+    const newProductsBlock = `// <<PRODUCTS_START>>\nconst PRODUCTS = ${productsJs};\n// <<PRODUCTS_END>>`;
 
-    // Replace between markers
-    const newContent = currentContent.replace(
+    currentContent = currentContent.replace(
       /\/\/ <<PRODUCTS_START>>[\s\S]*?\/\/ <<PRODUCTS_END>>/,
-      newBlock
+      newProductsBlock
     );
 
-    if (newContent === currentContent) {
-      return { statusCode: 500, body: 'Could not find PRODUCTS markers in file' };
-    }
+    // ── 2. Regenerate Snipcart validation buttons ─────────────────────────────
+    const buttons = Object.entries(products).map(([id, p]) => {
+      const desc = (p.eyebrow || '').replace(/'/g, '&#39;');
+      const name = (p.name || '').replace(/'/g, '&#39;');
+      return `  <button class="snipcart-add-item" data-item-id="${id}" data-item-name="${name}" data-item-price="${p.price}" data-item-url="${ITEM_URL}" data-item-description="${desc}"></button>`;
+    }).join('\n');
 
-    // Commit updated file to GitHub
+    const newValidationBlock = `<!-- <<VALIDATION_START>> -->\n<div style="display:none" aria-hidden="true">\n${buttons}\n</div>\n<!-- <<VALIDATION_END>> -->`;
+
+    currentContent = currentContent.replace(
+      /<!-- <<VALIDATION_START>> -->[\s\S]*?<!-- <<VALIDATION_END>> -->/,
+      newValidationBlock
+    );
+
+    // ── 3. Commit updated file to GitHub ──────────────────────────────────────
     const updateRes = await fetch(`https://api.github.com/repos/${repo}/contents/${filePath}`, {
       method: 'PUT',
       headers: {
@@ -57,7 +68,7 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         message: 'Update products via admin panel',
-        content: Buffer.from(newContent).toString('base64'),
+        content: Buffer.from(currentContent).toString('base64'),
         sha: sha
       })
     });
